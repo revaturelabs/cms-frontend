@@ -1,0 +1,23 @@
+<h1> Tags </h1>
+<div class="container">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Tag Id</th>
+      <th>Tag Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let tag of tags">
+      <td>{{tag.id}}</td>
+      <td>{{tag.name}}</td>
+      <td><button (click)="updateTag(tag.id)" class="btn btn-success">Update</button></td>
+      <td><button (click)="deleteTag(tag.id)" class="btn btn-warning">Delete</button></td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="row">
+    <button (click)="addTag()" class="btn btn-success">Add</button>
+  </div>
+
+</div>
