@@ -3,24 +3,25 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-<<<<<<< HEAD
-import { SidebarComponent } from './sidebar/sidebar.component';
-=======
 import { TagOperationsComponent } from './components/tag-operations/tag-operations.component';
->>>>>>> 68de09a4659a9e9b208b2fb1347168c2c8837949
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
-    SidebarComponent
-=======
-    TagOperationsComponent
->>>>>>> 68de09a4659a9e9b208b2fb1347168c2c8837949
+    TagOperationsComponent,
+    SidebarComponent,
+    SearchbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
