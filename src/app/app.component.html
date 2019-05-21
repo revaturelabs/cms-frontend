@@ -2,27 +2,28 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
     <span></span> <br>
-  <!--  <button mat-raised-button color="primary">Search Tag</button> -->
     <button mat-raised-button color="primary">Create Tag</button>
-  </mat-toolbar-row>
-
-  <div class="example-container">
+    <div class="example-container">
       <mat-form-field>
         <input matInput placeholder="Input">
       </mat-form-field>
-    
+
       <mat-form-field>
-        <textarea matInput placeholder="Textarea"></textarea>
-      </mat-form-field>
-    
-      <mat-form-field>
-        <mat-select placeholder="Select">
-          <mat-option value="option">Option</mat-option>
+        <mat-select placeholder="Select" multiple>
+          <mat-option value="optoin">JAVA</mat-option>
+          <mat-option value="optoin">SalesForce</mat-option>
+          <mat-option value="optoin">Testing</mat-option>
+          <mat-option value="optoin">.NET</mat-option>
+          <mat-option value="optoin">Spring</mat-option>
+          <mat-option value="optoin">Spring MVC</mat-option>
+          <mat-option value="optoin">SQL</mat-option>
+          <mat-option value="optoin">Angular</mat-option>
+          <mat-option value="optoin">JavaScript</mat-option>
+          <mat-option value="optoin">TypeScript</mat-option>
+          <mat-option value="optoin">Unix</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
 
-  
-
-
+  </mat-toolbar-row>
 <router-outlet></router-outlet>

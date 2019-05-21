@@ -5,7 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TagOperationsComponent } from './components/tag-operations/tag-operations.component';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MyOwnCustomMaterialModule} from './material'
+import {MyOwnCustomMaterialModule} from './material';
+import {MatFormFieldModule, MatInputModule} from '@angular/material';
 
 
 @NgModule({
@@ -17,7 +18,9 @@ import {MyOwnCustomMaterialModule} from './material'
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MyOwnCustomMaterialModule
+    MyOwnCustomMaterialModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
