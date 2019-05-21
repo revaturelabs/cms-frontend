@@ -1,0 +1,8 @@
+<p>Display Result</p>
+<div class="style">
+  <div *ngFor="let eachResult of results ">
+      Name: {{ eachResult.name | uppercase}} <br>
+      Tag: {{ eachResult.tag | uppercase}} <br>
+      Link: <a href="{{ eachResult.link}}">{{ eachResult.link}}</a> <br>
+</div>
+  </div>
