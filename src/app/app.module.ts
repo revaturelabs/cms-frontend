@@ -9,7 +9,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MyOwnCustomMaterialModule} from './material'
-
+import {MatInputModule} from '@angular/material';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import {MyOwnCustomMaterialModule} from './material'
     ReactiveFormsModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
-    MyOwnCustomMaterialModule
+    MyOwnCustomMaterialModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
