@@ -1,4 +1,4 @@
-import { Result } from './result';
+import { Result } from './result.model';
 //dummy data 
 export var resultList: Result[] = [
     {
