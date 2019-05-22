@@ -11,15 +11,16 @@ import {MatButtonModule} from '@angular/material/button';
 import {MyOwnCustomMaterialModule} from './material';
 import {MatFormFieldModule, MatInputModule} from '@angular/material';
 import { CreateOperationsComponent } from './components/create-operations/create-operations.component';
-import { ResultComponent } from './result/result.component';
+import {ResultComponent} from './components/result/result.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TagOperationsComponent,
-    SearchbarComponent,
-    CreateOperationsComponent
+    CreateOperationsComponent,
+    ResultComponent,
+    SearchbarComponent
   ],
   imports: [
     BrowserModule,
@@ -29,9 +30,9 @@ import { ResultComponent } from './result/result.component';
     MatFormFieldModule,
     BrowserAnimationsModule,
     MyOwnCustomMaterialModule,
-    MatButtonModule,
+    MatFormFieldModule,
     MatInputModule,
-    ResultComponent
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
