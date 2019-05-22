@@ -1,15 +1,18 @@
 import { Result } from './result';
-//dummy data 
-export var resultList: Result[] = [
+// dummy data 
+export var ResultList: Result[] = [
     {
+        "contentId": "02",
         "name": "Java",
         "tag" : "thread, JDBC, Servlet",
-        "link": "https://www.w3schools.com/sql/trysql.asp?filename=trysql_select_join_left",
-        "description": "If you don't understand how to properly do a join you should check this out.",
+        "label": "notes",
+        "link": "https://www.java.com/en/",
+        "description": "You should check this out for general Java information",
+        "created": "5/21/2019",
         "updated": "5/21/2019"
     }
 ]
-//the real deal
+// the real deal
 // export class ResultList {
 //     resultList: Result[];
     
