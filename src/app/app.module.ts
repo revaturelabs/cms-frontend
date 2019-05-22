@@ -7,16 +7,15 @@ import { TagOperationsComponent } from './components/tag-operations/tag-operatio
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MyOwnCustomMaterialModule} from './material';
 import {MatFormFieldModule, MatInputModule, MatMenuModule} from '@angular/material';
-import { CreateOperationsComponent } from './components/create-operations/create-operations.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TagOperationsComponent,
-    CreateOperationsComponent,
     NavbarComponent
   ],
   imports: [
@@ -27,7 +26,8 @@ import {HttpClientModule} from '@angular/common/http';
     MatFormFieldModule,
     MatInputModule,
     MatMenuModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
