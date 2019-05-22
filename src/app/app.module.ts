@@ -7,12 +7,14 @@ import { TagOperationsComponent } from './components/tag-operations/tag-operatio
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MyOwnCustomMaterialModule} from './material';
 import {MatFormFieldModule, MatInputModule} from '@angular/material';
+import { CreateOperationsComponent } from './components/create-operations/create-operations.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TagOperationsComponent
+    TagOperationsComponent,
+    CreateOperationsComponent
   ],
   imports: [
     BrowserModule,
