@@ -1,6 +1,6 @@
 <button mat-button [matMenuTriggerFor] = "menu">Menu Placeholder</button>
 <mat-menu #menu = "matMenu">
-  <button mat-menu-item>New</button>
+  <button onclick=window.location.reload(); mat-menu-item>New</button>
   <button mat-menu-item>Open</button>
   <button mat-menu-item [matMenuTriggerFor] = "recent">Recent</button>
 </mat-menu>

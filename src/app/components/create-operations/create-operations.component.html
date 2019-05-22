@@ -1,47 +1,30 @@
 
-<div style="text-align: center">
-  <label>ID:binding</label>
-</div>
-<div style="text-align: center">
-  <label>Name:
-    <input placeholder = "Enter Module Name"/>
-  </label>
-</div>
-<div style="text-align: center">
-  <label>URL:
-    <input placeholder = "Enter GIT URL" />
-  </label>
-</div>
+<form class ="input-fields">
+  <mat-form-field class="full-width-field">
+    <input matInput placeholder="Enter Name of Content"/>
+  </mat-form-field>
+<br/>
+  <mat-form-field class="full-width-field">
+    <input matInput placeholder="Enter Git URL"/>
+  </mat-form-field>
+  <br/>
+  <mat-form-field class="full-width-field">
+    <mat-label>Select Category</mat-label>
+      <mat-select>
+        <mat-option value="Code Example">Code Example</mat-option>
+        <mat-option value="Lecture Notes">Lecture Notes</mat-option>
+        <mat-option value="Exercises">Exercises</mat-option>
+      </mat-select>
+  </mat-form-field>
+  <br/>
+  <mat-form-field class="full-width-field">
+    <textarea matInput placeholder="Provide a short description"></textarea>
+  </mat-form-field>
+</form>
 
-<div style="text-align: center">
-
-  <label>Description:</label>
-
-  
-    <textarea
-        ng-model="string"
-        [name="string"]
-        [required="string"]
-        [ng-required="string"]
-        [ng-minlength="number"]
-        [ng-maxlength="number"]
-        [ng-pattern="string"]
-        [ng-change="string"]
-        [ng-trim="boolean"]>
-      ...
-</textarea>
-
-  
-</div>
-
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-  </li>
-  <li>
-  </li>
-  <li>
-  </li>
-</ul>
+<br/>
+<br>
+<button mat-raised-button style="color: #7D827E " (click)="submitCreate()">Submit</button>
+<br>
 
 <router-outlet></router-outlet>
