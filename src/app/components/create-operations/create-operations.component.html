@@ -4,19 +4,18 @@
     Nav Bar Place Holder
   </h1>
 </div>
-<div style="text-align: center">
-  <label>ID:binding</label>
-</div>
+
 <div style="text-align: center">
   <label>Name:
-    <input placeholder = "Enter Module Name"/>
+    <input placeholder = "Enter Module Name" type="text" [(ngModel)]="create.name"/>
   </label>
 </div>
 <div style="text-align: center">
   <label>URL:
-    <input placeholder = "Enter GIT URL" />
+    <input placeholder = "Enter GIT URL" type="text" [(ngModel)]="create.url" />
   </label>
 </div>
+
 
 <div style="text-align: center">
 
@@ -38,6 +37,10 @@
 
   
 </div>
+
+<br>
+<button (click)="submitCreate()">Submit</button>
+<br>
 
 <h2>Here are some links to help you start: </h2>
 <ul>
