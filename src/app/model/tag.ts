@@ -1,8 +1,11 @@
 export class Tag {
-  id: number;
-  name: string;
-  constructor(id, name ) {
-    this.id = id;
-    this.name = name;
+  constructor(
+    public id: number,
+    public name: string,
+    public contentId: number,
+    public url: string,
+    public description: string,
+    public category: string
+  ) {
   }
 }
