@@ -11,6 +11,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MyOwnCustomMaterialModule} from './material';
 import {MatFormFieldModule, MatInputModule} from '@angular/material';
 import { CreateOperationsComponent } from './components/create-operations/create-operations.component';
+import { ResultComponent } from './result/result.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { CreateOperationsComponent } from './components/create-operations/create
     BrowserAnimationsModule,
     MyOwnCustomMaterialModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    ResultComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
