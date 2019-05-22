@@ -1,34 +1,6 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <span></span> <br>
-    <button mat-raised-button color="primary">Create Tag</button>
-    <div class="example-container">
-      <mat-form-field>
-        <input matInput placeholder="Input">
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-select placeholder="Select" multiple>
-          <mat-option value="option">JAVA</mat-option>
-          <mat-option value="option">SalesForce</mat-option>
-          <mat-option value="option">Testing</mat-option>
-          <mat-option value="option">.NET</mat-option>
-          <mat-option value="option">Spring</mat-option>
-          <mat-option value="option">Spring MVC</mat-option>
-          <mat-option value="option">Spring Boot</mat-option>
-          <mat-option value="option">Spring Security</mat-option>
-          <mat-option value="option">SQL</mat-option>
-          <mat-option value="option">Angular</mat-option>
-          <mat-option value="option">JavaScript</mat-option>
-          <mat-option value="option">TypeScript</mat-option>
-          <mat-option value="option">Unix</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-
-  </mat-toolbar-row>
-</mat-toolbar>
+<app-navbar></app-navbar>
+<app-create-operations></app-create-operations>
+<app-tag-operations></app-tag-operations>
 <router-outlet></router-outlet>
 <app-searchbar></app-searchbar>
 <app-result></app-result>

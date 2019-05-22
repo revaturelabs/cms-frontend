@@ -10,6 +10,7 @@ import {Tag} from '../../model/tag';
 })
 export class TagOperationsComponent implements OnInit {
 
+  tag: Tag;
   tags: Tag[];
   message: string;
 
@@ -45,7 +46,7 @@ export class TagOperationsComponent implements OnInit {
     this.router.navigate(['tag', id]);
   }
 
-  addTag() {
+  submitCreate() {
     this.router.navigate(['tag', -1]);
   }
 }
