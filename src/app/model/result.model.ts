@@ -1,22 +1,22 @@
 export class Result{
     contentId:string;
-    createdDate:string;
-    updatedDate:string;
-    label:string;
-    description:string;
     name:string;
     tag: string;
     link: string;
+    label:string;
+    description:string;
+    createdDate:string;
+    updatedDate:string;
     //add constructor if want to pass from backend
-    constructor(name:string,tag:string, link:string, contentId:string,createdDate:string,
-                updatedDate:string, label:string, description:string){
+    constructor(  contentId:string, name:string,tag:string,link:string, label:string, description:string,createdDate:string,
+                updatedDate:string ){
         this.contentId = contentId;
-        this.createdDate = createdDate;
-        this.updatedDate = updatedDate;
-        this.label = label;
-        this.description = description;
         this.name = name;
         this.tag = tag;
-        this.link = link
+        this.link = link;
+        this.label = label;
+        this.description = description;
+        this.createdDate = createdDate;
+        this.updatedDate = updatedDate;
     }
 }

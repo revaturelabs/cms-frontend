@@ -28,9 +28,7 @@ export class ResultComponent implements OnInit {
   public link: string;
   
   result = resultList;
-displayResult(): void{
-
-
+  displayResult(): void{
 }
 ngOnInit(){
   this.displayResult;
