@@ -5,7 +5,11 @@
 export const environment = {
   production: false
 };
+<<<<<<< HEAD
 export const USER_URL = `http://localhost:8088/Project3/something`;
+=======
+
+>>>>>>> 619bc6c63e4d2cd61863d9423103f76c2eac4ba7
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
