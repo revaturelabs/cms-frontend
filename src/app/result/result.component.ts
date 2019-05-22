@@ -20,6 +20,7 @@ export class ResultComponent implements OnInit {
   public tag: string;
   public link: string;
   
+  result = resultList;
 displayResult(): void{
 
 
