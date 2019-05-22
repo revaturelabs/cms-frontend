@@ -6,15 +6,15 @@ import { AppComponent } from './app.component';
 import { TagOperationsComponent } from './components/tag-operations/tag-operations.component';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MyOwnCustomMaterialModule} from './material';
-import {MatFormFieldModule, MatInputModule, MatMenuModule} from '@angular/material';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import {MatFormFieldModule, MatInputModule} from '@angular/material';
+import { CreateOperationsComponent } from './components/create-operations/create-operations.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TagOperationsComponent,
-    NavbarComponent
+    CreateOperationsComponent
   ],
   imports: [
     BrowserModule,
@@ -22,8 +22,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     BrowserAnimationsModule,
     MyOwnCustomMaterialModule,
     MatFormFieldModule,
-    MatInputModule,
-    MatMenuModule
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
