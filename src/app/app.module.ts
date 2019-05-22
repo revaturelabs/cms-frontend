@@ -9,6 +9,7 @@ import {MyOwnCustomMaterialModule} from './material';
 import {MatFormFieldModule, MatInputModule, MatMenuModule} from '@angular/material';
 import { CreateOperationsComponent } from './components/create-operations/create-operations.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {NavbarComponent} from './components/navbar/navbar.component';
     MyOwnCustomMaterialModule,
     MatFormFieldModule,
     MatInputModule,
-    MatMenuModule
+    MatMenuModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
