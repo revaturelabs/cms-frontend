@@ -1,5 +1,3 @@
-import { url } from 'inspector';
-
 export class Create {
     public id: number;
     public name: string;
