@@ -1,13 +1,24 @@
+    
 import { Injectable } from '@angular/core';
-import {Result} from '../model/result.model';
-import {Observable} from 'rxjs';
-import 'rxjs';
-//import {Response} from '@angular/http';
-import 'rxjs/Observable';
-@Injectable({
-  providedIn: 'root'
-})
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/Rx';
+import { ResultList } from '../model/result-list.model';
+import { USER_URL } from 'src/environments/environment';
+
+@Injectable()
 export class ResultService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+  public displayResult(): Observable<ResultList> {
+    console.log("Inservice");
+    return this.http
+            .get<any>(`${USER_URL}/findByTags`)
+            // .get<any>(`https://my-json-server.typicode.com/typicode/demo/posts`)
+            .catch(this.handleError);
+  }
+  private handleError(response: Response) {
+    return Observable.throw(response);
+  }
 }

@@ -20,3 +20,12 @@ export class Result{
         this.updatedDate = updatedDate;
     }
 }
+//new dummy
+// export class Result {
+//     id: string;
+//     title: string;
+//     constructor(id:string, title:string){
+//         this.id = id;
+//         this.title = title;
+//     }
+// }

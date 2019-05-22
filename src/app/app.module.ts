@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TagOperationsComponent } from './components/tag-operations/tag-operations.component';
@@ -9,6 +9,7 @@ import {MyOwnCustomMaterialModule} from './material';
 import {MatFormFieldModule, MatInputModule} from '@angular/material';
 import { CreateOperationsComponent } from './components/create-operations/create-operations.component';
 import {ResultComponent} from './result/result.component';
+import { ResultService } from './service/result.service';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import {ResultComponent} from './result/result.component';
     ResultComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -26,7 +28,7 @@ import {ResultComponent} from './result/result.component';
     MatFormFieldModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [ResultService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
