@@ -14,11 +14,15 @@ export class SearchService {
     return this.http.get<Result[]>(API_URL);
   }
 
-  getResultsByTag(tagId:string):Observable<Result[]>{
-    return this.http.get<Result[]>(API_URL + "/findByTags/tagId");
+  getResultsByTag(tagName:string[]):Observable<Result[]>{
+    return this.http.get<Result[]>(API_URL + "/findByTags/" + tagName);
   }
 
-  getResultsByTagAndCategory(tagsAndCategory:string):Observable<Result[]>{
-    return this.http.get<Result[]>(API_URL + "/findByTagsAndCategory/tagsAndCategory");
+  getResultsByCategory(categoryName:string[]):Observable<Result[]>{
+    return this.http.get<Result[]>(API_URL + "/findByTags/" + categoryName);
+  }
+
+  getResultsByTagAndCategory(tagsAndCategory:string[]):Observable<Result[]>{
+    return this.http.get<Result[]>(API_URL + "/findByTagsAndCategory/" + tagsAndCategory);
   }
 }
