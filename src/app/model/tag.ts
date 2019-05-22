@@ -1,7 +1,8 @@
 export class Tag {
-  constructor(
-    public id: number,
-    public name: string,
-  ) {
+  id: number;
+  name: string;
+  constructor(id, name ) {
+    this.id = id;
+    this.name = name;
   }
 }
