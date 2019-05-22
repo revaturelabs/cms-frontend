@@ -1,14 +1,20 @@
 <div class="searchbar">
   <mat-form-field>
-    <input matInput #input placeholder="Search"/>   
+    <input matInput #name placeholder="Search"/> <br>
+    <button (click)="addTag(name.value)">Search</button>
   </mat-form-field><br>
-  <mat-form-field>
+  <!-- <mat-form-field>
       <mat-label>Category</mat-label>
       <mat-select [(value)]="selected">
         <mat-option value="all">All</mat-option>
         <mat-option value="code">Code</mat-option>
+        <mat-option value="exercise">Exercise</mat-option>
         <mat-option value="notes">Notes</mat-option>
-        <mat-option value="lecture_notes">Lecture Notes</mat-option>
       </mat-select>
-  </mat-form-field>  
+  </mat-form-field>   -->
+  <table>
+    <tr *ngFor="let tag of tags">
+      <td>{{tag.name}}</td><td><button (click)="removeTag(tag)">Remove</button></td>
+    </tr>
+  </table>
 </div>
