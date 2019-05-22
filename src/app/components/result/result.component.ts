@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { resultList } from '../model/result-list.model';
-import { Result } from '../model/result.model';
+import { resultList } from '../../model/result-list.model';
+import { Result } from '../../model/result.model';
 import { Router} from '@angular/router';
 
 
