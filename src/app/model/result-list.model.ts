@@ -1,6 +1,6 @@
 import { Result } from './result.model';
 //dummy data 
-export var ResultList: Result[] = [
+export var resultList: Result[] = [
     {
         "contentId": "02",
         "name": "Java",
@@ -19,6 +19,14 @@ export var ResultList: Result[] = [
 //     constructor(resultList: Result[]) {
 //         this.resultList = resultList;
 //     }
-// }
+// ]
+// the real deal
+export class ResultList {
+    resultList: Result[];
+    
+    constructor(resultList: Result[]) {
+        this.resultList = resultList;
+    }
+}
 
    

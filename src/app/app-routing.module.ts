@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {TagOperationsComponent} from './components/tag-operations/tag-operations.component';
-import {CreateOperationsComponent} from './components/create-operations/create-operations.component';
 import {ResultComponent} from './components/result/result.component';
+import { NavbarComponent} from './components/navbar/navbar.component';
 const routes: Routes = [
   { path: 'tags', component: TagOperationsComponent },
-  {path: 'create', component: CreateOperationsComponent},
-  {path: 'result', component: ResultComponent}
+  { path: 'result', component: ResultComponent},
+  { path: 'navbar', component: NavbarComponent }
 ];
 
 @NgModule({
