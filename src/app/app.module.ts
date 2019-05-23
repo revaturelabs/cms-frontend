@@ -8,8 +8,8 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MyOwnCustomMaterialModule} from './material';
 import {MatFormFieldModule, MatInputModule} from '@angular/material';
 import { CreateOperationsComponent } from './components/create-operations/create-operations.component';
-import {ResultComponent} from './result/result.component';
-import { ResultService } from './service/result.service';
+import {ResultComponent} from './components/result/result.component';
+import { ResultService } from './services/result.service';
 
 
 @NgModule({

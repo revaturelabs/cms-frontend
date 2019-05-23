@@ -11,14 +11,14 @@ import { USER_URL } from 'src/environments/environment';
 export class ResultService {
 
   constructor(private http: HttpClient) { }
-  public displayResult(): Observable<ResultList> {
-    console.log("Inservice");
-    return this.http
-            .get<any>(`${USER_URL}/findByTags`)
-            // .get<any>(`https://my-json-server.typicode.com/typicode/demo/posts`)
-            .catch(this.handleError);
-  }
-  private handleError(response: Response) {
-    return Observable.throw(response);
-  }
+  // public displayResult(): Observable<ResultList> {
+  //   console.log("Inservice");
+  //   return this.http
+  //           .get<any>(`${USER_URL}/findByTags`)
+  //           // .get<any>(`https://my-json-server.typicode.com/typicode/demo/posts`)
+  //           .catch(this.handleError);
+  // }
+  // private handleError(response: Response) {
+  //   return Observable.throw(response);
+  // }
 }

@@ -1,10 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-// import { resultList } from '../model/result-list.model';
-import { Result } from '../model/result.model';
 import { Router} from '@angular/router';
-import { ResultList } from '../model/result-list.model';
-import { ClientMessage } from '../model/client-message.model';
-import { ResultService } from '../service/result.service';
+import { ResultList } from '../../model/result-list.model';
+import { ResultService } from '../../services/result.service';
+import { Result } from '../../model/result.model';
+
 
 
 @Component({
@@ -13,20 +12,24 @@ import { ResultService } from '../service/result.service';
   styleUrls: ['./result.component.css']
 })
 export class ResultComponent implements OnInit {
-  public results: ResultList = new ResultList([]);
-  public clientMessage: ClientMessage = new ClientMessage('No information to display.');
-  router: Router;
- constructor(router: Router,private resultService: ResultService){
- this.router = router;
- }
- displayResult(): void{
-  console.log("Work");
-  this.resultService.displayResult()
-  .subscribe( 
-    data => {this.results = data,
-    console.log(this.results)},
-    responseError => this.clientMessage = responseError.error
-  );
+  result: Result[] = ResultList;
+//   public results: ResultList = new ResultList([]);
+//   public clientMessage: ClientMessage = new ClientMessage('No information to display.');
+//   router: Router;
+//  constructor(router: Router,private resultService: ResultService){
+//  this.router = router;
+//  }
+//  displayResult(): void{
+//   console.log("Work");
+//   this.resultService.displayResult()
+//   .subscribe( 
+//     data => {this.results = data,
+//     console.log(this.results)},
+//     responseError => this.clientMessage = responseError.error
+//   );
+ngOnInit(){
+  // this.displayResult();
+}
 }
 
   // public results: Result = new Result("","","","","","","","");
@@ -40,10 +43,10 @@ export class ResultComponent implements OnInit {
   // public link: string;
   //dummy data
   // result = resultList;
-ngOnInit(){
-  this.displayResult();
-}
+// ngOnInit(){
+//   this.displayResult();
+// }
 
-  }
+  // }
 
 
