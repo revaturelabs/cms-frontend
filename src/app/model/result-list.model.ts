@@ -1,11 +1,11 @@
-import { Result } from './result.model';
+import { Content } from '../model/content';
 //dummy data 
-export var resultList: Result[] = [
+export var resultList: Content[] = [
     {
-        "contentId": "02",
+        "id": 2,
         "name": "Java",
-        "tag" : "thread, JDBC, Servlet",
-        "link": "https://www.w3schools.com/sql/trysql.asp?filename=trysql_select_join_left",
+        "tags" : "thread, JDBC, Servlet",
+        "url": "https://www.w3schools.com/sql/trysql.asp?filename=trysql_select_join_left",
         "label": "notes",
         "description": "If you don't understand how to properly do a join you should check this out.",
         "createdDate": "5/21/2019",
@@ -22,9 +22,9 @@ export var resultList: Result[] = [
 // ]
 // the real deal
 export class ResultList {
-    resultList: Result[];
+    resultList: Content[];
     
-    constructor(resultList: Result[]) {
+    constructor(resultList: Content[]) {
         this.resultList = resultList;
     }
 }

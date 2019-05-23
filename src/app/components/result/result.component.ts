@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { resultList } from '../../model/result-list.model';
-import { Result } from '../../model/result.model';
+import { Content } from '../../model/content';
 import { Router} from '@angular/router';
 
 
@@ -17,7 +17,7 @@ export class ResultComponent implements OnInit {
  this.router = router;
  }
 
-  public results: Result = new Result("","","","","","","","");
+  public results: Content = new Content(0,"","","","",null,"","");
   public contentId:string;
   public createdDate:string;
   public updatedDate:string;
@@ -27,7 +27,7 @@ export class ResultComponent implements OnInit {
   public tag: string;
   public link: string;
   
-  result = resultList;
+  content = resultList;
 displayResult(): void{
 
 
