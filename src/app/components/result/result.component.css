@@ -6,13 +6,7 @@ color: antiquewhite;
 
 
 mat-expansion-panel-header {
-background: repeating-linear-gradient(
-  45deg,
-  #606dbc,
-  #606dbc 10px,
-  #465298 10px,
-  #465298 20px
-);
+background:#3c51c7;
 font-weight: bold;
 color: antiquewhite;
 }

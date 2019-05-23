@@ -1,4 +1,3 @@
-<p>Related Content</p>
 <div class="style">
      <!-- the real deal -->
      <mat-expansion-panel *ngFor="let eachResult of content">
@@ -7,7 +6,7 @@
        </mat-expansion-panel-header>
         Tag: {{ eachResult.tags | uppercase}} <br>
         Description: {{eachResult.description}}<br>
-        Last Updated: {{eachResult.updatedDate}}
+        Last Updated: {{eachResult.updatedDate}}<br>
         Link: <a href="{{eachResult.url}}">{{ eachResult.url}}</a><br>
      </mat-expansion-panel>
      <!-- dummy -->

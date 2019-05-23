@@ -13,7 +13,7 @@ import {MatFormFieldModule, MatInputModule, MatMenuModule, MatExpansionModule} f
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {ResultComponent} from './components/result/result.component';
 import {ResultService} from './services/result.service';
-
+import {SearchPageComponent} from './components/search-page/search-page.component';
 @NgModule({
   declarations: [
     AppComponent,

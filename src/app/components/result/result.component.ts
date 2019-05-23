@@ -27,7 +27,7 @@ export class ResultComponent implements OnInit {
   public tag: string;
   public link: string;
   
-  content = resultList;
+  // content = resultList;
 displayResult(): void{
 
 
