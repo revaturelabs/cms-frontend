@@ -20,7 +20,8 @@ import {ResultService} from './services/result.service';
     TagOperationsComponent,
     NavbarComponent,
     ResultComponent,
-    SearchbarComponent
+    SearchbarComponent,
+    SearchPageComponent
   ],
   imports: [
     HttpClientModule,
