@@ -1,22 +1,51 @@
 <form class ="input-fields" (ngSubmit)="!tagForm.invalid && submitCreate()" #tagForm="ngForm">
-
+    <mat-label>Content Name: </mat-label>
   <mat-form-field class="full-width-field">
-      <mat-label>Content Name: </mat-label>
-    <input matInput placeholder="Enter Name of Content" type="text" class="form-control"
+    <input matInput placeholder="Enter Name of Content" type="text" #contentId="ngModel"
+    [ngModel]="tag.contentId" class="form-control"
     name="contentId" required="required" minlength="5"/>
   </mat-form-field>
+  <mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span></span> <br>
+    <button mat-raised-button color="primary">Create Tag</button>
+    <div class="example-container">
+      <mat-form-field>
+        <input matInput placeholder="Input">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select placeholder="Select" multiple>
+          <mat-option value="option">JAVA</mat-option>
+          <mat-option value="option">SalesForce</mat-option>
+          <mat-option value="option">Testing</mat-option>
+          <mat-option value="option">.NET</mat-option>
+          <mat-option value="option">Spring</mat-option>
+          <mat-option value="option">Spring MVC</mat-option>
+          <mat-option value="option">Spring Boot</mat-option>
+          <mat-option value="option">Spring Security</mat-option>
+          <mat-option value="option">SQL</mat-option>
+          <mat-option value="option">Angular</mat-option>
+          <mat-option value="option">JavaScript</mat-option>
+          <mat-option value="option">TypeScript</mat-option>
+          <mat-option value="option">Unix</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+
   <br/>
   
+  <mat-label>URL: </mat-label>
   <mat-form-field class="full-width-field">
-      <mat-label>Git URL: </mat-label>
     <input matInput placeholder="Enter Git URL" required="required"/>
   </mat-form-field>
   <br/>
-
+  <mat-label>Select Category: </mat-label>
   <mat-form-field class="full-width-field">
-      <mat-label>Select Category: </mat-label>
-    <mat-select [(value)]="selected">
-        
+    <mat-select>
       <mat-option value="Code Example">Code Example</mat-option>
       <mat-option value="Lecture Notes">Lecture Notes</mat-option>
       <mat-option value="Exercises">Exercises</mat-option>
