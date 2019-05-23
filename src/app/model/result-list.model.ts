@@ -1,4 +1,4 @@
-import { Content } from '../model/content';
+import { Content } from '../model/Content';
 //dummy data 
 export var resultList: Content[] = [
     {
