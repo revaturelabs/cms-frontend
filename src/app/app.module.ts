@@ -12,8 +12,6 @@ import {MyOwnCustomMaterialModule} from './material';
 import {MatFormFieldModule, MatInputModule, MatMenuModule} from '@angular/material';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
-import {MatFormFieldModule, MatInputModule} from '@angular/material';
 import {ResultComponent} from './components/result/result.component';
 
 
@@ -21,7 +19,7 @@ import {ResultComponent} from './components/result/result.component';
   declarations: [
     AppComponent,
     TagOperationsComponent,
-    NavbarComponent
+    NavbarComponent,
     ResultComponent,
     SearchbarComponent
   ],
@@ -37,7 +35,7 @@ import {ResultComponent} from './components/result/result.component';
     MatInputModule,
     MatMenuModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
     MatButtonModule
   ],
   providers: [],
