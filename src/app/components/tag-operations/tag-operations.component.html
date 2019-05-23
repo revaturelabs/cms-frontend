@@ -1,28 +1,61 @@
-<form class ="input-fields" (ngSubmit)="!tagForm.invalid && submitCreate()" #tagForm="ngForm">
+<form class="input-fields" (ngSubmit)="!tagForm.invalid && submitCreate()" #tagForm="ngForm">
 
-  <mat-form-field class="full-width-field">
-      <mat-label>Content Name: </mat-label>
-    <input matInput placeholder="Enter Name of Content" type="text" class="form-control"
-    name="contentId" required="required" minlength="5"/>
-  </mat-form-field>
-  <br/>
-  
-  <mat-form-field class="full-width-field">
-      <mat-label>Git URL: </mat-label>
-    <input matInput placeholder="Enter Git URL" required="required"/>
-  </mat-form-field>
-  <br/>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span></span> <br>
+      <button mat-raised-button color="primary">Create Tag</button>
 
+      <div class="example-container">
+        <mat-form-field class="full-width-field">
+          <input matInput placeholder="Input">
+        </mat-form-field>
+
+        <mat-form-field class="full-width-field">
+          <mat-select placeholder="Select" multiple>
+            <mat-option value="option">JAVA</mat-option>
+            <mat-option value="option">SalesForce</mat-option>
+            <mat-option value="option">Testing</mat-option>
+            <mat-option value="option">.NET</mat-option>
+            <mat-option value="option">Spring</mat-option>
+            <mat-option value="option">Spring MVC</mat-option>
+            <mat-option value="option">Spring Boot</mat-option>
+            <mat-option value="option">Spring Security</mat-option>
+            <mat-option value="option">SQL</mat-option>
+            <mat-option value="option">Angular</mat-option>
+            <mat-option value="option">JavaScript</mat-option>
+            <mat-option value="option">TypeScript</mat-option>
+            <mat-option value="option">Unix</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <br />
+  <mat-label>Content Name: </mat-label>
   <mat-form-field class="full-width-field">
-      <mat-label>Select Category: </mat-label>
-    <mat-select [(value)]="selected">
-        
+
+    <input matInput placeholder="Enter Name of Content" type="text" class="form-control" name="contentId"
+      required="required" minlength="5" />
+
+  </mat-form-field>
+  <br>
+
+  <mat-label>URL: </mat-label>
+  <mat-form-field class="full-width-field">
+    <input matInput placeholder="Enter Git URL" required="required" />
+  </mat-form-field>
+  <br />
+  <mat-label>Select Category: </mat-label>
+  <mat-form-field class="full-width-field">
+    <mat-select>
       <mat-option value="Code Example">Code Example</mat-option>
       <mat-option value="Lecture Notes">Lecture Notes</mat-option>
       <mat-option value="Exercises">Exercises</mat-option>
     </mat-select>
   </mat-form-field>
-  <br/>
+  <br />
   <mat-form-field class="full-width-field">
     <textarea matInput placeholder="Provide a short description" required="required"></textarea>
   </mat-form-field>
@@ -30,62 +63,3 @@
 <br>
 <button mat-raised-button style="color: #7D827E " (click)="submitCreate()">Submit</button>
 <br>
-
-
-<!-- <form (ngSubmit)="!tagForm.invalid && submitCreate()" #tagForm="ngForm">
-  <fieldset class="form-group">
-    <label>Tag Id</label>
-    <input type="text" #id="ngModel"
-           [ngModel]="tag.id" class="form-control"
-           name="id" required="required" minlength="5">
-  </fieldset>
-  <fieldset class="form-group">
-    <label>Tag Name</label>
-    <input type="text" #name="ngModel"
-           [ngModel]="tag.name" class="form-control"
-           name="name" required="required" minlength="5">
-  </fieldset>
-  <fieldset class="form-group">
-    <label>Content Id</label>
-    <input type="text" #contentId="ngModel"
-           [ngModel]="tag.contentId" class="form-control"
-           name="contentId" required="required" minlength="5">
-  </fieldset>
-  <fieldset class="form-group">
-    <label>URL</label>
-    <input type="text" #url="ngModel"
-           [ngModel]="tag.url" class="form-control"
-           name="url" required="required" minlength="5">
-  </fieldset>
-  <fieldset class="form-group">
-    <label>Description</label>
-    <input type="text" #description="ngModel"
-           [ngModel]="tag.description" class="form-control"
-           name="description" required="required" minlength="5">
-  </fieldset>
-  <fieldset class="form-group">
-    <label>Category</label>
-    <input type="text" #category="ngModel"
-           [ngModel]="tag.category" class="form-control"
-           name="category" required="required" minlength="5">
-  </fieldset>
-  <button type="submit" class="btn btn-success">Save</button>
-</form>
-<div class="container">
-  <table class="table">
-    <thead>
-    <tr>
-      <th>Tag Id</th>
-      <th>Tag Name</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let tag of tags">
-      <td>{{tag.id}}</td>
-      <td>{{tag.name}}</td>
-    </tr>
-    </tbody>
-  </table>
-</div>
-<br/>
- -->

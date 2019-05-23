@@ -13,6 +13,7 @@ import {MatFormFieldModule, MatInputModule, MatMenuModule} from '@angular/materi
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ResultComponent} from './components/result/result.component';
+import { SearchPageComponent } from './components/search-page/search-page.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {ResultComponent} from './components/result/result.component';
     TagOperationsComponent,
     NavbarComponent,
     ResultComponent,
-    SearchbarComponent
+    SearchbarComponent,
+    SearchPageComponent
   ],
   imports: [
     BrowserModule,
