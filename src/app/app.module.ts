@@ -9,14 +9,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MyOwnCustomMaterialModule} from './material';
-import {MatFormFieldModule, MatInputModule, MatMenuModule, MatListModule} from '@angular/material';
+import {MatFormFieldModule, MatInputModule, MatMenuModule, MatExpansionModule} from '@angular/material';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {ResultComponent} from './components/result/result.component';
-<<<<<<< HEAD
 import {ResultService} from './services/result.service';
-=======
-
->>>>>>> f12898f74734d52b8a05bceced65f29ddc5f9c42
 
 @NgModule({
   declarations: [
@@ -40,7 +36,8 @@ import {ResultService} from './services/result.service';
     MatMenuModule,
     HttpClientModule,
     FormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatExpansionModule
   ],
   providers: [ResultService],
   bootstrap: [AppComponent]
