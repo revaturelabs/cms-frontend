@@ -1,19 +1,22 @@
 <form class ="input-fields" (ngSubmit)="!tagForm.invalid && submitCreate()" #tagForm="ngForm">
-    <mat-label>Content Name: </mat-label>
+
   <mat-form-field class="full-width-field">
-    <input matInput placeholder="Enter Name of Content" type="text" #contentId="ngModel"
-    [ngModel]="tag.contentId" class="form-control"
+      <mat-label>Content Name: </mat-label>
+    <input matInput placeholder="Enter Name of Content" type="text" class="form-control"
     name="contentId" required="required" minlength="5"/>
   </mat-form-field>
   <br/>
-  <mat-label>URL: </mat-label>
+  
   <mat-form-field class="full-width-field">
+      <mat-label>Git URL: </mat-label>
     <input matInput placeholder="Enter Git URL" required="required"/>
   </mat-form-field>
   <br/>
-  <mat-label>Select Category: </mat-label>
+
   <mat-form-field class="full-width-field">
-    <mat-select>
+      <mat-label>Select Category: </mat-label>
+    <mat-select [(value)]="selected">
+        
       <mat-option value="Code Example">Code Example</mat-option>
       <mat-option value="Lecture Notes">Lecture Notes</mat-option>
       <mat-option value="Exercises">Exercises</mat-option>
