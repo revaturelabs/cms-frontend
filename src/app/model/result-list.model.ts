@@ -1,24 +1,32 @@
-import { Result } from './result';
-// dummy data 
-export var ResultList: Result[] = [
+import { Result } from './result.model';
+//dummy data 
+export var resultList: Result[] = [
     {
         "contentId": "02",
         "name": "Java",
         "tag" : "thread, JDBC, Servlet",
+        "link": "https://www.w3schools.com/sql/trysql.asp?filename=trysql_select_join_left",
         "label": "notes",
-        "link": "https://www.java.com/en/",
-        "description": "You should check this out for general Java information",
-        "created": "5/21/2019",
-        "updated": "5/21/2019"
+        "description": "If you don't understand how to properly do a join you should check this out.",
+        "createdDate": "5/21/2019",
+        "updatedDate": "5/21/2019"
     }
 ]
-// the real deal
+//the real deal
 // export class ResultList {
 //     resultList: Result[];
     
 //     constructor(resultList: Result[]) {
 //         this.resultList = resultList;
 //     }
-// }
+// ]
+// the real deal
+export class ResultList {
+    resultList: Result[];
+    
+    constructor(resultList: Result[]) {
+        this.resultList = resultList;
+    }
+}
 
    
