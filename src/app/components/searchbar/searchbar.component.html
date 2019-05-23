@@ -1,8 +1,17 @@
 <div class="searchbar">
-  <mat-form-field>
-    <input matInput #name placeholder="Search"/> <br>
-    <button (click)="addTag(name.value)">Search</button>
-  </mat-form-field><br>
+
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span></span> <br>
+        <button mat-raised-button color="accent" (click)="addTag(name.value)">Search</button>
+
+      <mat-form-field class="full-width-field">
+        <input matInput #name placeholder="Search" /> <br>
+      </mat-form-field>
+
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <br>
   <!-- <mat-form-field>
       <mat-label>Category</mat-label>
       <mat-select [(value)]="selected">
@@ -14,7 +23,22 @@
   </mat-form-field>   -->
   <table>
     <tr *ngFor="let tag of tags">
-      <td>{{tag.name}}</td><td><button (click)="removeTag(tag)">Remove</button></td>
+      <td>{{tag.name}}</td>
+      <td><button (click)="removeTag(tag)">Remove</button></td>
     </tr>
   </table>
+
+  <!--
+      <table mat-table class="mat-elevation-28">
+    <ng-container matColumnDef="select">
+      <mat-checkbox 
+      (click) = ""
+      (change)= ""
+      [checked] = "selection.isSelected(row)"
+      [aria-label] = "checkboxLabel(row)">
+
+      </mat-checkbox>
+    </ng-container>
+  
+  </table>-->
 </div>
