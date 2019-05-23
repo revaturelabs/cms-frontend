@@ -20,7 +20,7 @@ export class SearchbarComponent implements OnInit {
   tags : Array<Tag>;
 
   addTag(name){
-    let tag = new Tag(0, name, 0, "", "", "");
+    let tag = new Tag(0, 0, "type",  "name", "url", 0, null, null); 
     this.tags.push(tag);
   }
 
