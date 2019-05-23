@@ -9,16 +9,10 @@ describe('workspace-project App', () => {
   });
 
   it('should display welcome message', () => {
-<<<<<<< HEAD
     page.navigateTo();
-<<<<<<< HEAD
-    expect(page.getTitleText()).toEqual('Welcome to Project3!');
-=======
-=======
+
     page.navigateTo();-
->>>>>>> 5255b9bb8facc55978f9fa9101cbefcb7424a8b6
     expect(page.getTitleText()).toEqual('Welcome to project3!');
->>>>>>> 619bc6c63e4d2cd61863d9423103f76c2eac4ba7
   });
 
   afterEach(async () => {
