@@ -54,11 +54,11 @@ export class SearchService {
   }
 
   getContentsByTagAndCategory(tags: Tag[], category: string): Observable<Content[]> {
-    return this.http.get<Content[]>(API_URL + "/findByTagsAndCategory/" + tags + "," + category, httpOptions);
+    return this.http.get<Content[]>(API_URL + "/findbytagsandcategory/" + tags + "," + category, httpOptions);
   }
 
   postContentsByTagAndCategory(tags: Tag[], category: string): Observable<Content[]> {
-    return this.http.post<Content[]>(API_URL + "/findByTagsAndCategory/", { tags, category }, httpOptions)
+    return this.http.post<Content[]>(API_URL + "/findbytagsandcategory?category=" + category, { tags }, httpOptions)
       .pipe(
         //catchError(this.handleError('getContentsByTag', tagName))
       );
