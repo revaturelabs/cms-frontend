@@ -1,10 +1,10 @@
 <p>Related Content</p>
 <div class="style">
-  <div *ngFor="let eachResult of result">
+  <div *ngFor="let eachResult of results">
       Name: {{ eachResult.name | uppercase}} <br>
-      Tag: {{ eachResult.tag | uppercase}} <br>
-      Link: <a href="{{ eachResult.link}}">{{ eachResult.link}}</a> <br>
+      Tag: {{ eachResult.tags }} <br>
+      Link: <a href="{{ eachResult.url}}">{{ eachResult.url}}</a> <br>
       Description: {{eachResult.description}}<br>
-      Last Updated: {{eachResult.updatedDate}}<br>
+      <!--Last Updated: {{eachResult.updatedDate}}<br> -->
 </div>
   </div>
