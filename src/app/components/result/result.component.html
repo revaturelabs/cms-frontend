@@ -4,10 +4,10 @@
     <mat-expansion-panel-header>
       Name: {{ eachResult.name | uppercase}} 
     </mat-expansion-panel-header>
-    Tags: {{ eachResult.tags}} <br>
-    Description: {{eachResult.description}}<br>
-    Last Updated: {{eachResult.updatedDate}}<br> 
-    <button mat-button> Link: <a href="{{ eachResult.url}}">{{ eachResult.url}}</a><br></button>
+    <b>Tags:</b> {{ eachResult.tags}} <br>
+    <b>Description:</b> {{eachResult.description}}<br>
+    <b>Last Updated:</b> {{eachResult.updatedDate}}<br> 
+    <button mat-button> <b>Link:</b> <a href="{{ eachResult.url}}">{{ eachResult.url}}</a><br></button>
   </mat-expansion-panel>
   </div>
  
