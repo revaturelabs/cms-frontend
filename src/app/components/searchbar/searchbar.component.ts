@@ -24,6 +24,10 @@ export class SearchbarComponent implements OnInit {
     this.tags.push(tag);
   }
 
+  searchByTag(name){
+    // Call Service instead
+  }
+
   removeTag(tag){
     let index = this.tags.indexOf(tag);
     this.tags.splice(index,1);
