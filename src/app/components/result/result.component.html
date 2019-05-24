@@ -1,10 +1,13 @@
-<p>Related Content</p>
 <div class="style">
-  <div *ngFor="let eachResult of results">
-      Name: {{ eachResult.name | uppercase}} <br>
-      Tag: {{ eachResult.tags }} <br>
-      Link: <a href="{{ eachResult.url}}">{{ eachResult.url}}</a> <br>
+  <div *ngFor="let eachResult of content">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        Name: {{ eachResult.name | uppercase}}
+      </mat-expansion-panel-header>
+       <!--Last Updated: {{eachResult.updatedDate}}<br> -->
+      Tag: {{ eachResult.tags.name | uppercase }} <br>
       Description: {{eachResult.description}}<br>
-      <!--Last Updated: {{eachResult.updatedDate}}<br> -->
-</div>
+      Link: <a href="{{ eachResult.url}}">{{ eachResult.url}}</a>
+    </mat-expansion-panel>
   </div>
+ <!-- </div> -->
