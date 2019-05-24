@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Tag} from '../model/tag';
 import {API_URL} from '../app.constants';
-import {Content} from "../model/content";
-import {Module} from "../model/module";
+import {Content} from '../model/content';
+import {Module} from '../model/module';
 
 @Injectable({
   providedIn: 'root'
