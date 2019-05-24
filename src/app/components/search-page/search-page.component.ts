@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 /**
- * Component for handling the search page 
+ * Component for handling the display of the search page 
  */
 @Component({
   selector: 'app-search-page',
