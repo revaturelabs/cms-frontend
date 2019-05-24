@@ -13,6 +13,7 @@ import {MatFormFieldModule, MatInputModule, MatMenuModule} from '@angular/materi
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {ResultComponent} from './components/result/result.component';
 import { SearchPageComponent } from './components/search-page/search-page.component';
+import { ResultService } from './services/result.service'
 
 
 @NgModule({
