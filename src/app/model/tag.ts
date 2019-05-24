@@ -5,7 +5,7 @@ export class Tag {
   constructor(
     public id: number,
     public contentId: number,
-    public type:string,
+    public category:string, // this is what the backend calls "category" of content
     public name: string,
     public url: string,
     public moduleId:number,
