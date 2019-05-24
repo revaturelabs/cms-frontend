@@ -6,6 +6,9 @@ import {TagOperationForm} from "../../model/tag.operation.form"
 import {Content} from "../../model/content";
 import { Module } from 'src/app/model/module';
 
+/**
+ * Component to handle tag operations
+ */
 @Component({
   selector: 'app-tag-operations',
   templateUrl: './tag-operations.component.html',
@@ -23,6 +26,9 @@ export class TagOperationsComponent implements OnInit {
     private router: Router
   ) { }
 
+  /**
+   * On initialization takes a tagOperationForm and gives it a new tag and new module then calls the refreshTags method
+   */
   ngOnInit() {
     this.form = new TagOperationForm(new Tag(1,1,"", "", 1, 
     [new Content(1, "", "", "" ,"", [1,2,3], new Date(0), new Date(1))],[ new Module(1, "", false)], new Date(0), new Date(1) ),
@@ -30,6 +36,9 @@ export class TagOperationsComponent implements OnInit {
     this.refreshTags();
   }
 
+  /**
+   * Calls retrieveAllTags service and retrieves all tags in tags list
+   */
   refreshTags() {
     this.tagService.retrieveAllTags().subscribe(
       response => {
@@ -38,6 +47,11 @@ export class TagOperationsComponent implements OnInit {
     );
   }
 
+  /**
+   * Takes an id parameter and calls the deleteTag service. 
+   * Returns a success message if deletion is successful
+   * @param id 
+   */
   deleteTag(id) {
     console.log(`delete tag ${id}`);
     this.tagService.deleteTag(id).subscribe(
@@ -49,10 +63,17 @@ export class TagOperationsComponent implements OnInit {
     );
   }
 
+  /**
+   * Takes a parameter id and navigates to tag 
+   * @param id 
+   */
   updateTag(id) {
     this.router.navigate(['tag', id]);
   }
 
+  /**
+   * Navigates to tag without a parameter
+   */
   submitCreate() {
     this.router.navigate(['tag', -1]);
   }

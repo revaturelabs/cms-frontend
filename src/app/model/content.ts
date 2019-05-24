@@ -1,5 +1,8 @@
-// Object model for the Content table.
-// Represents all metadata on content, and a link to that content.
+/**
+ * Object model for the Content table.
+ * Represents all metadata on content, and a link to that content.
+ */
+
 
 export class Content {
     constructor(

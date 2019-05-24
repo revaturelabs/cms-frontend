@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+/**
+ * Component for handling the search page 
+ */
 @Component({
   selector: 'app-search-page',
   templateUrl: './search-page.component.html',
