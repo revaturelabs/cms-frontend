@@ -1,4 +1,29 @@
-mat-form-field {
+.mat-form-field {
     width: 30%;
     align-content: center;
+    color: black;
+    background-color:white;
+}
+
+.mat-option{
+    color: white;
+    background-color: #FF4500;
+}
+
+.mat-select{
+    width:350px;
+    color:black;
+    background-color: white;
+}
+
+.mat-raised-button{
+    text-align: center;
+   /* background-color: #FF4500; */
+    background-color:white;
+    font-size: 16px;
+    color: #FF4500;
+}
+
+.button{
+    text-align: left;
 }

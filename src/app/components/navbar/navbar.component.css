@@ -4,3 +4,8 @@
     font-size: 16px;
     color:white;
 }
+
+.imgMainLogo img {
+    
+max-width: 30%;
+}

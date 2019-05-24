@@ -1,12 +1,20 @@
-<button mat-button [matMenuTriggerFor] = "menu">Menu</button>
+<div class="navbar-brand">
+  <div class="imgMainLogo">
+    <a class="navbar-item">
+      <img src="assets/img/revatureLogo.png">
+      <br>
+    </a>
+  </div>
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+</div>
 <hr>
-<mat-menu #menu = "matMenu">
+<mat-menu #menu="matMenu">
   <button routerLink="tags" mat-menu-item>Create</button>
   <button routerLink="search" mat-menu-item> Search </button>
   <!-- <button mat-menu-item>Search</button> -->
   <!-- <button mat-menu-item [matMenuTriggerFor] = "recent">Recent</button> -->
 </mat-menu>
-<mat-menu #recent = "matMenu">
+<mat-menu #recent="matMenu">
   <!-- <button mat-menu-item>File 1</button> -->
   <!-- <button mat-menu-item>File 2</button> -->
 </mat-menu>
