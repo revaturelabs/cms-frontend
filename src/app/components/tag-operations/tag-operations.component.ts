@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {TagOperationsService} from '../../services/tag-operations.service';
 import {Router} from '@angular/router';
 import {Tag} from '../../model/tag';
+import {TagOperationForm} from "../../model/tag.operation.form"
+import {Content} from "../../model/content";
 
 @Component({
   selector: 'app-tag-operations',
@@ -13,6 +15,7 @@ export class TagOperationsComponent implements OnInit {
   tag: Tag;
   tags: Tag[];
   message: string;
+  form: TagOperationForm;
 
   constructor(
     private tagService: TagOperationsService,
@@ -20,6 +23,7 @@ export class TagOperationsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.form = new TagOperationForm(new Tag(), new Content());
     this.refreshTags();
   }
 

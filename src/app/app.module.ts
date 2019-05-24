@@ -9,16 +9,21 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MyOwnCustomMaterialModule} from './material';
-import {MatFormFieldModule, MatInputModule} from '@angular/material';
+import {MatFormFieldModule, MatInputModule, MatMenuModule} from '@angular/material';
+import {NavbarComponent} from './components/navbar/navbar.component';
+import {HttpClientModule} from '@angular/common/http';
 import {ResultComponent} from './components/result/result.component';
+import { SearchPageComponent } from './components/search-page/search-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TagOperationsComponent,
+    NavbarComponent,
     ResultComponent,
-    SearchbarComponent
+    SearchbarComponent,
+    SearchPageComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +35,9 @@ import {ResultComponent} from './components/result/result.component';
     MyOwnCustomMaterialModule,
     MatFormFieldModule,
     MatInputModule,
+    MatMenuModule,
+    HttpClientModule,
+    FormsModule,
     MatButtonModule
   ],
   providers: [],
