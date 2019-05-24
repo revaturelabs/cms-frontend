@@ -1,23 +1,9 @@
 <div class="style">
-     <!-- the real deal -->
-     <mat-expansion-panel *ngFor="let eachResult of content">
-       <mat-expansion-panel-header>
-         Name: {{ eachResult.name | uppercase}}
-       </mat-expansion-panel-header>
-        Tag: {{ eachResult.tags | uppercase}} <br>
-        Description: {{eachResult.description}}<br>
-        Last Updated: {{eachResult.updatedDate}}<br>
-        Link: <a href="{{eachResult.url}}">{{ eachResult.url}}</a><br>
-     </mat-expansion-panel>
-     <!-- dummy -->
-     <!-- <mat-expansion-panel *ngFor="let eachResult of results">
-       <mat-expansion-panel-header>
-         ID: {{ eachResult.id}}
-       </mat-expansion-panel-header>
-       Title: {{ eachResult.title | uppercase}} <br>
-       <mat-action-row>
-         <button mat-button> Link:</button>
-       </mat-action-row>
-     </mat-expansion-panel> -->
+  <div *ngFor="let eachResult of results">
+      Name: {{ eachResult.name | uppercase}} <br>
+      Tag: {{ eachResult.tags }} <br>
+      Link: <a href="{{ eachResult.url}}">{{ eachResult.url}}</a> <br>
+      Description: {{eachResult.description}}<br>
+      <!--Last Updated: {{eachResult.updatedDate}}<br> -->
 </div>
  <!-- </div> -->

@@ -1,41 +1,45 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { resultList } from '../../model/result-list.model';
-import { Content } from '../../model/content';
-import { Router} from '@angular/router';
-
+import { Router } from '@angular/router';
+import { Content } from 'src/app/model/content';
+import { Tag } from 'src/app/model/tag';
 
 @Component({
   selector: 'app-result',
   templateUrl: './result.component.html',
   styleUrls: ['./result.component.css']
 })
+
 export class ResultComponent implements OnInit {
- 
+
   router: Router;
 
- constructor(router: Router){
- this.router = router;
- }
-
-  public results: Content = new Content(0,"","","","",null,"","");
-  public contentId:string;
-  public createdDate:string;
-  public updatedDate:string;
-  public label:string;
-  public description:string;
-  public name:string;
-  public tag: string;
-  public link: string;
-  
-  // content = resultList;
-displayResult(): void{
-
-
-}
-ngOnInit(){
-  this.displayResult;
-}
-
+  constructor(router: Router) {
+    this.router = router;
   }
 
+  //public contents: Content[];
+  public id: number;           //Primary key of content
+  public category: string;      //The Category user gave content (ie. code example, notes)
+  public description: string;   //The description user gave content
+  public name: string;         //The name user gave content
+  public url: string;          //The url user supplied that links to the content
+  public tags: number[];        //Array of every tag user assigned to this content
+  public createdDate: number  //placeholder for created date
+  public updatedDate: number  //placeholder for updated date
 
+  // Populating with test data
+  public results:Content[] = [ new Content(1, 
+    "2", 
+    "Description of Sample Content Goes Here", 
+    "Sample Content Name", 
+    "http://urlgoeshere.com", 
+    [ 0, 1,2,3,4,5], new Date(1), new Date(0))];
+
+  displayResult(): void {
+
+  }
+  ngOnInit() {
+    this.displayResult;
+  }
+
+}

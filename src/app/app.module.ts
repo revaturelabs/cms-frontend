@@ -9,11 +9,12 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MyOwnCustomMaterialModule} from './material';
-import {MatFormFieldModule, MatInputModule, MatMenuModule, MatExpansionModule} from '@angular/material';
+import {MatFormFieldModule, MatInputModule, MatMenuModule} from '@angular/material';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {ResultComponent} from './components/result/result.component';
-import {ResultService} from './services/result.service';
-import {SearchPageComponent} from './components/search-page/search-page.component';
+import { SearchPageComponent } from './components/search-page/search-page.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,8 +38,7 @@ import {SearchPageComponent} from './components/search-page/search-page.componen
     MatMenuModule,
     HttpClientModule,
     FormsModule,
-    MatButtonModule,
-    MatExpansionModule
+    MatButtonModule
   ],
   providers: [ResultService],
   bootstrap: [AppComponent]
