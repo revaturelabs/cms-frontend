@@ -33,12 +33,12 @@ export class ResultComponent implements OnInit {
   /**
    *  Populating with test data
    */
-  public results:Content[] = [ new Content(1, 
-    "2", 
-    "Description of Sample Content Goes Here", 
-    "Sample Content Name", 
-    "http://urlgoeshere.com", 
-    [ 0, 1,2,3,4,5], new Date(1), new Date(0))];
+  // public results:Content[] = [ new Content(1, 
+  //   "2", 
+  //   "Description of Sample Content Goes Here", 
+  //   "Sample Content Name", 
+  //   "http://urlgoeshere.com", 
+  //   [ 0, 1,2,3,4,5], new Date(1), new Date(0))];
 
   /**
    * Displays the result of searching for contents
