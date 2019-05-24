@@ -5,14 +5,13 @@ export class Tag {
   constructor(
     public id: number,
     public contentId: number,
-    public type:string,
+    public type: string,
     public name: string,
-    public url: string,
-    public moduleId:number,
-    public contentIds:Content[],
-    public modules:Module[]
-    //public description: Date,
-    //public category: Date
+    public moduleId: number,
+    public contentIds: Content[],
+    public modules: Module[],
+    public created: Date,
+    public updated: Date
   ) {
   }
 }

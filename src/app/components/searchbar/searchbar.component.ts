@@ -10,23 +10,23 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class SearchbarComponent implements OnInit {
 
-  constructor(private searchService: SearchService) { 
+  constructor(private searchService: SearchService) {
     this.tags = [];
   }
+
+  tags: Array<Tag>;
 
   ngOnInit() {
   }
 
-  tags : Array<Tag>;
-
-  addTag(name){
-    let tag = new Tag(0, 0, "type",  "name", "url", 0, null, null); 
+  addTag(name) {
+    const tag = new Tag(0, 0, 'type',  'name', 0, null, null, null, null);
     this.tags.push(tag);
   }
 
-  removeTag(tag){
-    let index = this.tags.indexOf(tag);
-    this.tags.splice(index,1);
+  removeTag(tag) {
+    const index = this.tags.indexOf(tag);
+    this.tags.splice(index, 1);
   }
 
 }
