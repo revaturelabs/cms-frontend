@@ -1,13 +1,13 @@
-<div class="style">
-  <div *ngFor="let eachResult of content">
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
+<div class="expansion">
+  <div *ngFor="let eachResult of  results">
+  
+     
         Name: {{ eachResult.name | uppercase}}
-      </mat-expansion-panel-header>
+      
        <!--Last Updated: {{eachResult.updatedDate}}<br> -->
       Tag: {{ eachResult.tags.name | uppercase }} <br>
       Description: {{eachResult.description}}<br>
       Link: <a href="{{ eachResult.url}}">{{ eachResult.url}}</a>
-    </mat-expansion-panel>
+
   </div>
  <!-- </div> -->
