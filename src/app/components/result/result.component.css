@@ -1,0 +1,12 @@
+mat-expansion-panel {
+    background:  #FF8C00;
+    font-weight: bold;
+    color: antiquewhite;
+    }
+    
+    
+    mat-expansion-panel-header {
+    background:#3c51c7;
+    font-weight: bold;
+    color: antiquewhite;
+    }
