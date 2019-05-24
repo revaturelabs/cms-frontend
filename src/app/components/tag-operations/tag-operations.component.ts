@@ -32,7 +32,7 @@ export class TagOperationsComponent implements OnInit {
   ngOnInit() {
     this.form = new TagOperationForm(new Tag(null, null, null, null, null, null, null, null, null),
       new Content(null, null, null, null, null, null, null, null),
-      new Module(null, null, null));
+      new Module(null, null, null, null, null));
     this.refreshTags();
   }
 
