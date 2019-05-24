@@ -12,8 +12,8 @@
 <!-- Will need to be populated with a /getAllTags endpoint-->
         <mat-form-field class="full-width-field">
           <mat-select placeholder="Select" multiple>
-          <!--            *ngFor="let tag in tags"-->
-<!--            <mat-option (click)="form.tagName = tag.name" value="option">{{tag.name}}</mat-option>-->
+                     *ngFor="let tag in tags"
+           <mat-option (click)="form.tagName = tag.name" value="option">{{tag.name}}</mat-option>
             <mat-option value="option">SalesForce</mat-option>
             <mat-option value="option">Testing</mat-option>
             <mat-option value="option">.NET</mat-option>
@@ -26,7 +26,7 @@
             <mat-option value="option">JavaScript</mat-option>
             <mat-option value="option">TypeScript</mat-option>
             <mat-option value="option">Unix</mat-option>
-          </mat-select>
+          </mat-select> 
         </mat-form-field>
       </div>
 

@@ -13,7 +13,8 @@ import {NavbarComponent} from './components/navbar/navbar.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ResultComponent} from './components/result/result.component';
 import { SearchPageComponent } from './components/search-page/search-page.component';
-
+import {MatSelectModule} from '@angular/material/select';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,9 @@ import { SearchPageComponent } from './components/search-page/search-page.compon
     MatMenuModule,
     HttpClientModule,
     FormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
