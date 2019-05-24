@@ -42,11 +42,10 @@ export class TagOperationsComponent implements OnInit {
    * Calls retrieveAllTags service and retrieves all tags in tags list
    */
   refreshTags() {
-    this.tagService.retrieveAllTags().subscribe(
-      response => {
-        this.tags = response;
-      }
-    );
+    this.tagService.retrieveAllTags()
+                  .subscribe(
+                    response => this.tags = response
+                  );
   }
 
   /**
@@ -56,13 +55,14 @@ export class TagOperationsComponent implements OnInit {
    */
   deleteTag(id) {
     console.log(`delete tag ${id}`);
-    this.tagService.deleteTag(id).subscribe(
-      response => {
-        console.log(response);
-        this.message = `Delete of Tag ${id} Successful!`;
-        this.refreshTags();
-      }
-    );
+    this.tagService.deleteTag(id)
+                   .subscribe(
+                    response => {
+                      console.log(response);
+                      this.message = `Deleted Tag ${id} Successfully!`;
+                      this.refreshTags();
+                    }
+                  );
   }
 
   /**
@@ -70,13 +70,29 @@ export class TagOperationsComponent implements OnInit {
    * @param id 
    */
   updateTag(id) {
-    this.router.navigate(['tag', id]);
+    this.tagService.updateTag(id)
+                    .subscribe(
+                      response => {
+                        this.tag = response;
+                        console.log(response);
+                        this.message = 'Updated Tag ${id} Successfully!';
+                        this.refreshTags();
+                      }
+                    );
   }
 
   /**
    * Navigates to tag without a parameter
    */
   submitCreate() {
-    this.router.navigate(['tag', -1]);
+    this.tagService.createTag(Tag)
+                    .subscribe(
+                      response => {
+                        this.tag = response;
+                        console.log(response);
+                        this.message = 'Created Tag ${id} Successfully!';
+                        this.refreshTags();
+                      }
+                    );
   }
 }
