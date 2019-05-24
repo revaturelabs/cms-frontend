@@ -7,7 +7,7 @@ export const environment = {
 };
 
 //export const API_URL = 'http://localhost:8080/cms'; //old url
-export const API_URL = 'http://localhost/'; //url for when jenkins build issue gets resolved
+export const API_URL = 'http://localhost'; //url for when jenkins build issue gets resolved
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
