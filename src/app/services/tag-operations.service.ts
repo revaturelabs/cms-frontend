@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Tag} from '../model/tag';
-import {API_URL} from '../app.constants';
+import { API_URL } from 'src/environments/environment';
 /**
  * Provides methods to retrieve all tags, delete a tag, retrieve a single tag by id, update a tag, and to create a tag
  */

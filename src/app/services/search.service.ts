@@ -4,7 +4,7 @@ import { catchError } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Content } from '../model/content';
 import { Tag } from '../model/tag';
-import { API_URL } from '../app.constants';
+import { API_URL } from 'src/environments/environment'; 
 
 const httpOptions = {
   headers: new HttpHeaders({
