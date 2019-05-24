@@ -14,13 +14,13 @@ export class SearchbarComponent implements OnInit {
     this.tags = [];
   }
 
-  tags: Array<Tag>;
+  tags: Tag[];
 
   ngOnInit() {
   }
 
-  addTag(name) {
-    const tag = new Tag(0, 0, 'type',  'name', 0, null, null, null, null);
+  addTag() {
+    const tag = new Tag(0, 0, 'type',  'name', 0, null, null);
     this.tags.push(tag);
   }
 

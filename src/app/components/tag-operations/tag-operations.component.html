@@ -3,29 +3,26 @@
   <mat-toolbar color="primary">
     <mat-toolbar-row>
       <span></span> <br>
-      <button mat-raised-button color="primary">Create Tag</button>
-
-      <div class="example-container">
+        <div class="example-container">
         <mat-form-field class="full-width-field">
           <input matInput placeholder="Input" name="tagName" >
         </mat-form-field>
-
         <mat-form-field class="full-width-field">
           <mat-select placeholder="Select" multiple>
-          <!--            *ngFor="let tag in tags"-->
-<!--            <mat-option (click)="form.tagName = tag.name" value="option">{{tag.name}}</mat-option>-->
-            <mat-option value="option">SalesForce</mat-option>
-            <mat-option value="option">Testing</mat-option>
-            <mat-option value="option">.NET</mat-option>
-            <mat-option value="option">Spring</mat-option>
-            <mat-option value="option">Spring MVC</mat-option>
-            <mat-option value="option">Spring Boot</mat-option>
-            <mat-option value="option">Spring Security</mat-option>
-            <mat-option value="option">SQL</mat-option>
-            <mat-option value="option">Angular</mat-option>
-            <mat-option value="option">JavaScript</mat-option>
-            <mat-option value="option">TypeScript</mat-option>
-            <mat-option value="option">Unix</mat-option>
+
+            <mat-option (click)="form.module.name = module.name" value="option">{{module.name}}</mat-option>
+<!--            <mat-option value="option">SalesForce</mat-option>-->
+<!--            <mat-option value="option">Testing</mat-option>-->
+<!--            <mat-option value="option">.NET</mat-option>-->
+<!--            <mat-option value="option">Spring</mat-option>-->
+<!--            <mat-option value="option">Spring MVC</mat-option>-->
+<!--            <mat-option value="option">Spring Boot</mat-option>-->
+<!--            <mat-option value="option">Spring Security</mat-option>-->
+<!--            <mat-option value="option">SQL</mat-option>-->
+<!--            <mat-option value="option">Angular</mat-option>-->
+<!--            <mat-option value="option">JavaScript</mat-option>-->
+<!--            <mat-option value="option">TypeScript</mat-option>-->
+<!--            <mat-option value="option">Unix</mat-option>-->
           </mat-select>
         </mat-form-field>
       </div>
