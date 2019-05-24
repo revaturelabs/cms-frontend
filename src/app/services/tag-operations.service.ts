@@ -13,17 +13,17 @@ export class TagOperationsService {
   ) { }
 
   retrieveAllTags() {
-    return this.http.get<Tag[]>(`${API_URL}/tags`);
+    return this.http.get<Tag[]>(`${API_URL}/tags/getall`);
 
   }
 
   deleteTag(id) {
-    return this.http.delete(`${API_URL}/tags/id/${id}`);
+    return this.http.delete(`${API_URL}/tags/${id}`);
   }
 
   retrieveTag(id) {
-    console.log('inside retrieve employee');
-    return this.http.get<Tag>(`${API_URL}/tags/id/${id}`);
+    // console.log('inside retrieve employee');
+    return this.http.get<Tag>(`${API_URL}/tags/${id}`);
   }
 
   updateTag(id, tag) {

@@ -20,13 +20,17 @@ export class SearchbarComponent implements OnInit {
   }
 
   addTag(name) {
-    const tag = new Tag(0, 0, 'type',  'name', 0, null, null, null, null);
+    const tag = new Tag(0, 0, 'type',  name, 0, null, null, null, null);
     this.tags.push(tag);
+    console.log(this.tags);
+    this.searchService.postContentsByTag(this.tags);
   }
 
   removeTag(tag) {
     const index = this.tags.indexOf(tag);
     this.tags.splice(index, 1);
+    console.log(this.tags);
+    this.searchService.postContentsByTag(this.tags);
   }
 
 }
