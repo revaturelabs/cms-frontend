@@ -27,7 +27,7 @@ export class SearchbarComponent implements OnInit {
    * @param name name
    */
   addTag(name) {
-    const tag = new Tag(0, 0, '',  name, 0, null, null, null, null);
+    const tag = new Tag(0, name, '', 0, 0, null, null, null, null);
     this.tags.push(tag);
     console.log(this.tags);
     this.searchService.postContentsByTag(this.tags);
