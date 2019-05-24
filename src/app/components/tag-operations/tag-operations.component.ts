@@ -18,6 +18,8 @@ export class TagOperationsComponent implements OnInit {
 
   tag: Tag;
   tags: Tag[];
+  modules: Module[];
+  contents: Content[];
   message: string;
   form: TagOperationForm;
 
@@ -30,9 +32,9 @@ export class TagOperationsComponent implements OnInit {
    * On initialization takes a tagOperationForm and gives it a new tag and new module then calls the refreshTags method
    */
   ngOnInit() {
-    this.form = new TagOperationForm(new Tag(1,1,"", "", 1, 
-    [new Content(1, "", "", "" ,"", [1,2,3], new Date(0), new Date(1))],[ new Module(1, "", false)], new Date(0), new Date(1) ),
-    new Content(1, "", "", "" ,"", [1,2,3], new Date(0), new Date(1)));
+    this.form = new TagOperationForm(new Tag(1,"", "", 1, 1, new Date(0), new Date(1), 
+    [new Content(1, this.tags, "", "" ,"", "", new Date(0), new Date(1))],
+    [ new Module(1, "", false, new Date(0), new Date(1))]));
     this.refreshTags();
   }
 
