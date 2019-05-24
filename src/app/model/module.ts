@@ -1,6 +1,8 @@
-//Object model for the Module table.
-//Module template, most module functionality will be implemented in future sprints.
 
+/**
+ * Object model for the Module table.
+ * Module template, most module functionality will be implemented in future sprints.
+ */
 export class Module {
     constructor(
         public id: number,            //Primary key of module

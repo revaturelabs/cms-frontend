@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { Content } from 'src/app/model/content';
 import { Tag } from 'src/app/model/tag';
 
+/**
+ * ResultComponent displays the results of searching for content
+ */
 @Component({
   selector: 'app-result',
   templateUrl: './result.component.html',
@@ -27,7 +30,9 @@ export class ResultComponent implements OnInit {
   public createdDate: number  //placeholder for created date
   public updatedDate: number  //placeholder for updated date
 
-  // Populating with test data
+  /**
+   *  Populating with test data
+   */
   public results:Content[] = [ new Content(1, 
     "2", 
     "Description of Sample Content Goes Here", 
@@ -35,9 +40,15 @@ export class ResultComponent implements OnInit {
     "http://urlgoeshere.com", 
     [ 0, 1,2,3,4,5], new Date(1), new Date(0))];
 
+  /**
+   * Displays the result of searching for contents
+   */
   displayResult(): void {
 
   }
+  /**
+   * On initialization call the displayResult method
+   */
   ngOnInit() {
     this.displayResult;
   }
