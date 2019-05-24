@@ -1,10 +1,7 @@
 <form class="input-fields" (ngSubmit)="submitCreate()" name="tagOperationForm" #tagOperationForm="ngForm">
-
   <mat-toolbar color="primary">
     <mat-toolbar-row>
       <span></span> <br>
-      <button mat-raised-button color="primary">Create Tag</button>
-
       <div class="example-container">
         <mat-form-field class="full-width-field">
           <input matInput placeholder="Input" name="tagName" >
@@ -12,8 +9,8 @@
 <!-- Will need to be populated with a /getAllTags endpoint-->
         <mat-form-field class="full-width-field">
           <mat-select placeholder="Select" multiple>
-                     *ngFor="let tag in tags"
-           <mat-option (click)="form.tagName = tag.name" value="option">{{tag.name}}</mat-option>
+<!--                     *ngFor="let tag in tags"-->
+<!--           <mat-option (click)="form.tagName = tag.name" value="option">{{tag.name}}</mat-option>-->
             <mat-option value="option">SalesForce</mat-option>
             <mat-option value="option">Testing</mat-option>
             <mat-option value="option">.NET</mat-option>

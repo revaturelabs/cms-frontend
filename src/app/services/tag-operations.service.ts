@@ -11,26 +11,23 @@ export class TagOperationsService {
 
   constructor(private http: HttpClient) { }
 
-  /**
-   * Sends a get request to retrieve an array of tags 
-   */
+   // Sends a get request to retrieve an array of tags
+
   retrieveAllTags() {
     return this.http.get<Tag[]>(`${API_URL}/tags/getall`);
 
   }
 
-  /**
-   * Sends a delete request to remove a tag by
-   * @param id 
-   */
-  deleteTag(id) {
+  //  * Sends a delete request to remove a tag by
+  //  * @param id
+    deleteTag(id) {
     return this.http.delete(`${API_URL}/tags/${id}`);
   }
 
-  /**
-   * Sends a get request to retrieve a tag and prints a message to the console
-   * @param id 
-   */
+  // /**
+  //  * Sends a get request to retrieve a tag and prints a message to the console
+  //  * @param id
+  //  */
   retrieveTag(id) {
     // console.log('inside retrieve employee');
     return this.http.get<Tag>(`${API_URL}/tags/${id}`);
