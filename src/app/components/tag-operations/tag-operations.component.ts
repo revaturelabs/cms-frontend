@@ -31,29 +31,45 @@ export class TagOperationsComponent implements OnInit {
   }
 
   refreshTags() {
-    this.tagService.retrieveAllTags().subscribe(
-      response => {
-        this.tags = response;
-      }
-    );
+    this.tagService.retrieveAllTags()
+                  .subscribe(
+                    response => this.tags = response
+                  );
   }
 
   deleteTag(id) {
     console.log(`delete tag ${id}`);
-    this.tagService.deleteTag(id).subscribe(
-      response => {
-        console.log(response);
-        this.message = `Delete of Tag ${id} Successful!`;
-        this.refreshTags();
-      }
-    );
+    this.tagService.deleteTag(id)
+                   .subscribe(
+                    response => {
+                      console.log(response);
+                      this.message = `Deleted Tag ${id} Successfully!`;
+                      this.refreshTags();
+                    }
+                  );
   }
 
   updateTag(id) {
-    this.router.navigate(['tag', id]);
+    this.tagService.updateTag(id)
+                    .subscribe(
+                      response => {
+                        this.tag = response;
+                        console.log(response);
+                        this.message = 'Updated Tag ${id} Successfully!';
+                        this.refreshTags();
+                      }
+                    );
   }
 
   submitCreate() {
-    this.router.navigate(['tag', -1]);
+    this.tagService.createTag(Tag)
+                    .subscribe(
+                      response => {
+                        this.tag = response;
+                        console.log(response);
+                        this.message = 'Created Tag ${id} Successfully!';
+                        this.refreshTags();
+                      }
+                    );
   }
 }
