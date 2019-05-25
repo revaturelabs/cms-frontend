@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Tag } from '../../model/tag';
 import { SearchService } from '../../services/search.service';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Content } from 'src/app/model/content';
 
 /**
  * Component for handling the search bar functionality
