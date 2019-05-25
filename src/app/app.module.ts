@@ -8,7 +8,7 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MyOwnCustomMaterialModule} from './material';
-import {MatFormFieldModule, MatInputModule,  MatToolbarModule, MatMenuModule, MatIconModule, MatStepperModule} from '@angular/material';
+import {MatFormFieldModule, MatInputModule, MatMenuModule, MatIconModule, MatStepperModule} from '@angular/material';
 import {MatListModule} from '@angular/material/list'; 
 import {MatTreeModule} from '@angular/material/tree';
 import {MatCardModule} from '@angular/material/card';
@@ -17,7 +17,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ResultComponent } from './components/result/result.component';
 import { ResultService } from './services/result.service';
 import { SearchPageComponent } from './components/search-page/search-page.component';
-
+import {MatSelectModule} from '@angular/material/select';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,6 @@ import { SearchPageComponent } from './components/search-page/search-page.compon
     ReactiveFormsModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
-    MyOwnCustomMaterialModule,
     MatFormFieldModule,
     MatInputModule,
     MatListModule,
@@ -45,7 +45,10 @@ import { SearchPageComponent } from './components/search-page/search-page.compon
     MatCardModule,
     MatIconModule,
     MatExpansionModule,
-    MatMenuModule
+    MatMenuModule,
+    MatToolbarModule,
+    MatSelectModule,
+    MyOwnCustomMaterialModule
   ],
   providers: [ResultService],
   bootstrap: [AppComponent]
