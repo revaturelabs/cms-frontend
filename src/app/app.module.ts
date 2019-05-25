@@ -8,11 +8,12 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
-import {MyOwnCustomMaterialModule} from './material';
 import {MatFormFieldModule, MatInputModule, MatMenuModule} from '@angular/material';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {ResultComponent} from './components/result/result.component';
 import { SearchPageComponent } from './components/search-page/search-page.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { ResultService } from './services/result.service'
 
 
@@ -33,13 +34,14 @@ import { ResultService } from './services/result.service'
     ReactiveFormsModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
-    MyOwnCustomMaterialModule,
     MatFormFieldModule,
     MatInputModule,
     MatMenuModule,
     HttpClientModule,
     FormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule,
+    MatToolbarModule
   ],
   providers: [ResultService],
   bootstrap: [AppComponent]
