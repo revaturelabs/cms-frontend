@@ -5,12 +5,12 @@
       <span></span> <br>
         <div class="example-container">
         <mat-form-field class="full-width-field">
-          <input matInput placeholder="Input" name="tagName" >
+          <input matInput (change)="setTagName($event)" placeholder="Input" name="tagName" >
         </mat-form-field>
-        <mat-form-field class="full-width-field">
-          <mat-select placeholder="Select" multiple>
-
-            <mat-option (click)="form.module.name = module.name" value="option">{{module.name}}</mat-option>
+        <mat-form-field class="full-width-field" >
+          <mat-label>Module</mat-label>
+          <mat-select *ngFor="let module of modules" placeholder="Select" multiple>
+            <mat-option (click)="inputContent.module = module" value="option">{{module}}</mat-option>
 <!--            <mat-option value="option">SalesForce</mat-option>-->
 <!--            <mat-option value="option">Testing</mat-option>-->
 <!--            <mat-option value="option">.NET</mat-option>-->
@@ -34,7 +34,7 @@
   <mat-label>Content Name: </mat-label>
   <mat-form-field class="full-width-field">
 
-    <input matInput placeholder="Enter Name of Content" type="text" class="form-control" name="contentId"
+    <input matInput [(ngModel)]="inputContent.content.name" placeholder="Enter Name of Content" type="text" class="form-control" name="contentId"
       required="required" minlength="5" />
 
   </mat-form-field>
@@ -42,14 +42,13 @@
 
   <mat-label>URL: </mat-label>
   <mat-form-field class="full-width-field">
-    <input matInput placeholder="Enter Git URL" [(ngModel)]="form.content.url" required="required" name="contentUrl" #contentUrl="ngModel"/>
+    <input matInput placeholder="Enter Git URL" [(ngModel)]="inputContent.content.url" required="required" name="contentUrl" #contentUrl="ngModel"/>
 
   </mat-form-field>
-  {{form.content.url}}
   <br />
   <mat-label>Select Category: </mat-label>
   <mat-form-field class="full-width-field">
-    <mat-select>
+    <mat-select [(value)]="inputContent.content.category">
       <mat-option value="Code Example">Code Example</mat-option>
       <mat-option value="Lecture Notes">Lecture Notes</mat-option>
       <mat-option value="Exercises">Exercises</mat-option>
@@ -57,7 +56,7 @@
   </mat-form-field>
   <br />
   <mat-form-field class="full-width-field">
-    <textarea matInput placeholder="Provide a short description" required="required"></textarea>
+    <textarea matInput [(ngModel)]="inputContent.content.description" placeholder="Provide a short description" required="required" name="contentDescription"></textarea>
   </mat-form-field>
 </form>
 

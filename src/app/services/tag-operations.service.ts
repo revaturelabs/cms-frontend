@@ -4,6 +4,7 @@ import {Tag} from '../model/tag';
 import {API_URL} from '../app.constants';
 import {Content} from '../model/content';
 import {Module} from '../model/module';
+import {InputContentDTO} from '../model/content.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -15,12 +16,12 @@ export class TagOperationsService {
   ) { }
 
   retrieveAllTags() {
-    return this.http.get<Tag[]>(`${API_URL}/tags`);
+    return this.http.get<Tag[]>(`${API_URL}tags/getall`);
 
   }
 
   retrieveAllModules() {
-    return this.http.get<Module[]>(`${API_URL}/allmodules`);
+    return this.http.get<string[]>(`${API_URL}module/alltags`);
 
   }
 
@@ -48,5 +49,9 @@ export class TagOperationsService {
     return this.http.post(
       `${API_URL}/tags`
       , tag);
+  }
+
+  createContent(inputContent: InputContentDTO) {
+    return this.http.post(`${API_URL}content/register`, inputContent);
   }
 }

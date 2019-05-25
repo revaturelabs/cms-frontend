@@ -20,7 +20,7 @@ export class SearchbarComponent implements OnInit {
   }
 
   addTag() {
-    const tag = new Tag(0, 0, 'type',  'name', 0, null, null);
+    const tag = new Tag(0, 0, 'type',  'tagName', 0, null, null);
     this.tags.push(tag);
   }
 

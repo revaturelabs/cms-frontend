@@ -5,6 +5,7 @@ import {Tag} from '../../model/tag';
 import {TagOperationForm} from '../../model/tag.operation.form';
 import {Content} from '../../model/content';
 import {Module} from '../../model/module';
+import {InputContentDTO} from '../../model/content.dto';
 
 @Component({
   selector: 'app-tag-operations',
@@ -18,9 +19,10 @@ export class TagOperationsComponent implements OnInit {
   module: Module;
   tags: Tag[];
   contents: Content[];
-  modules: Module[];
+  modules: string[];
   message: string;
   form: TagOperationForm;
+  inputContent = new InputContentDTO(new Content(0, '', '', '', '', [], null, null),  []);
 
   constructor(
     private tagService: TagOperationsService,
@@ -74,6 +76,17 @@ export class TagOperationsComponent implements OnInit {
   // }
   //
   submitCreate() {
-    this.router.navigate(['tag', -1]);
+    console.log(this.inputContent);
+    this.tagService.createContent(this.inputContent).subscribe(data => console.log(data));
+    // this.router.navigate(['tag', -1]);
+  }
+
+  setTagName(event: any) {
+    this.inputContent.tags.push(event.target.value);
+    this.inputContent.content.tags.push(event.taget.value);
+  }
+
+  setCategory(event: any) {
+    this.inputContent.content.category = event.target.value;
   }
 }
