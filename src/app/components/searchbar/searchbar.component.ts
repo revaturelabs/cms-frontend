@@ -18,6 +18,7 @@ export class SearchbarComponent implements OnInit {
   }
 
   tags: Array<Tag>;
+  contents:Content[]
 
   ngOnInit() {
   }
@@ -30,7 +31,7 @@ export class SearchbarComponent implements OnInit {
     const tag = new Tag(0, name, '', 0, 0, null, null, null, null);
     this.tags.push(tag);
     console.log(this.tags);
-    this.searchService.postContentsByTag(this.tags);
+    this.postContentsByTag(this.tags);
   }
 
   /**
@@ -41,7 +42,23 @@ export class SearchbarComponent implements OnInit {
     const index = this.tags.indexOf(tag);
     this.tags.splice(index, 1);
     console.log(this.tags);
-    this.searchService.postContentsByTag(this.tags);
+    this.postContentsByTag(this.tags);
   }
 
+  postAllContents(){this.searchService.postAllContents().subscribe(
+    results => this.contents = results ); 
+  }
+
+  postContentsByTag(tagName: Tag[]){this.searchService.postContentsByTag(tagName).subscribe(
+    results => this.contents = results ); 
+  }
+ 
+  postContentsByCategory(categoryName: string){this.searchService.postContentsByCategory(categoryName).subscribe(
+    results => this.contents = results ); 
+  }
+
+  postContentsByTagAndCategory(tags: Tag[], category: string){
+    this.searchService.postContentsByTagAndCategory(tags, category).subscribe(
+      results => this.contents = results ); 
+    }
 }
