@@ -18,7 +18,7 @@ export class SearchbarComponent implements OnInit {
   }
 
   tags: Array<Tag>;
-  contents:Content[]
+   contents:Content[]
 
   ngOnInit() {
   }
