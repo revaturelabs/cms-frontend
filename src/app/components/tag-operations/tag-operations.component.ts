@@ -2,13 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {TagOperationsService} from '../../services/tag-operations.service';
 import {Router} from '@angular/router';
 import {Tag} from '../../model/tag';
-import {TagOperationForm} from "../../model/tag.operation.form"
-import {Content} from "../../model/content";
-import { Module } from 'src/app/model/module';
+import {TagOperationForm} from '../../model/tag.operation.form';
+import {Content} from '../../model/content';
+import {Module} from '../../model/module';
+import {InputContentDTO} from '../../model/content.dto';
 
-/**
- * Component to handle tag operations
- */
 @Component({
   selector: 'app-tag-operations',
   templateUrl: './tag-operations.component.html',
@@ -17,82 +15,79 @@ import { Module } from 'src/app/model/module';
 export class TagOperationsComponent implements OnInit {
 
   tag: Tag;
+  content: Content;
+  module: Module;
   tags: Tag[];
-  modules: Module[];
+
   contents: Content[];
+  modules: string[];
   message: string;
   form: TagOperationForm;
+  inputContent = new InputContentDTO(new Content(0, '', '', '', '', [], null, null),  []);
 
   constructor(
     private tagService: TagOperationsService,
     private router: Router
   ) { }
 
-  /**
-   * On initialization takes a tagOperationForm and gives it a new tag and new module then calls the refreshTags method
-   */
   ngOnInit() {
-    this.form = new TagOperationForm(new Tag(1,"", "", 1, 1, new Date(0), new Date(1), 
-    [new Content(1, this.tags, "", "" ,"", "", new Date(0), new Date(1))],
-    [ new Module(1, "", false, new Date(0), new Date(1))]));
+    this.form = new TagOperationForm(new Tag(null, null, '', 0, null, null, null, null, null),
+      new Content(null, '', '', '', '', null, null, null),
+      new Module(null, '', null, null, null ));
     this.refreshTags();
+    this.refreshModules();
+    this.refreshContents();
   }
 
-  /**
-   * Calls retrieveAllTags service and retrieves all tags in tags list
-   */
   refreshTags() {
-    this.tagService.retrieveAllTags()
-                  .subscribe(
-                    response => this.tags = response
-                  );
+    this.tagService.retrieveAllTags().subscribe(
+      response => {
+        this.tags = response;
+      }
+    );
+  }
+  refreshModules() {
+    this.tagService.retrieveAllModules().subscribe(
+      response => {
+        this.modules = response;
+      }
+    );
+  }
+  refreshContents() {
+    this.tagService.retrieveAllContents().subscribe(
+      response => {
+        this.contents = response;
+      }
+    );
   }
 
-  /**
-   * Takes an id parameter and calls the deleteTag service. 
-   * Returns a success message if deletion is successful
-   * @param id 
-   */
-  deleteTag(id) {
-    console.log(`delete tag ${id}`);
-    this.tagService.deleteTag(id)
-                   .subscribe(
-                    response => {
-                      console.log(response);
-                      this.message = `Deleted Tag ${id} Successfully!`;
-                      this.refreshTags();
-                    }
-                  );
-  }
+  // deleteTag(id) {
+  //   console.log(`delete tag ${id}`);
+  //   this.tagService.deleteTag(id).subscribe(
+  //     response => {
+  //       console.log(response);
+  //       this.message = `Delete of Tag ${id} Successful!`;
+  //       this.refreshTags();
+  //     }
+  //   );
+  // }
 
-  /**
-   * Takes a parameter id and navigates to tag 
-   * @param id 
-   */
-  updateTag(id) {
-    this.tagService.updateTag(id)
-                    .subscribe(
-                      response => {
-                        this.tag = response;
-                        console.log(response);
-                        this.message = 'Updated Tag ${id} Successfully!';
-                        this.refreshTags();
-                      }
-                    );
-  }
-
-  /**
-   * Navigates to tag without a parameter
-   */
+  // updateTag(id) {
+  //   this.router.navigate(['tag', id]);
+  // }
+  //
   submitCreate() {
-    this.tagService.createTag(Tag)
-                    .subscribe(
-                      response => {
-                        this.tag = response;
-                        console.log(response);
-                        this.message = 'Created Tag ${id} Successfully!';
-                        this.refreshTags();
-                      }
-                    );
+    console.log(this.inputContent);
+    this.tagService.createContent(this.inputContent).subscribe(data => console.log(data));
+    // this.router.navigate(['tag', -1]);
+  }
+
+  setTagName(event: any) {
+    this.inputContent.tags.push(event.target.value);
+    this.inputContent.content.tags.push(event.taget.value);
+  }
+
+  setCategory(event: any) {
+    this.inputContent.content.category = event.target.value;
   }
 }
