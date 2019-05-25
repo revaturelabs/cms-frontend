@@ -4,7 +4,6 @@ import {Tag} from '../model/tag';
 import { API_URL } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import {Content} from '../model/content';
-import {Module} from '../model/module';
 import {InputContentDTO} from '../model/content.dto';
 
 
@@ -19,34 +18,36 @@ export class TagOperationsService {
 
   retrieveAllTags() {
 
-    return this.http.get<Tag[]>(`${API_URL}tags/getall`);
+    return this.http.get<Tag[]>(`${API_URL}/tags/getall`);
 
   }
 
   retrieveAllModules() {
-    return this.http.get<string[]>(`${API_URL}module/alltags`);
+    return this.http.get<string[]>(`${API_URL}/module/alltags`);
 
   }
 
   retrieveAllContents() {
-    return this.http.get<Content[]>(`${API_URL}/tags`);
+    //return this.http.get<Content[]>(`${API_URL}/tags`);
+    return this.http.get<Content[]>(`${API_URL}/content/findall`);
 
   }
 
   //  * Sends a delete request to remove a tag by
   //  * @param id
     deleteTag(id) {
-    return this.http.delete(`${API_URL}/tags/${id}`);
+    //return this.http.delete(`${API_URL}/tags/${id}`);
+    return this.http.delete(`${API_URL}/tags/delete/${id}`);
   }
 
   // /**
   //  * Sends a get request to retrieve a tag and prints a message to the console
   //  * @param id
   //  */
-
   retrieveTag(id) {
     // console.log('inside retrieve employee');
-    return this.http.get<Tag>(`${API_URL}/tags/${id}`);
+    //return this.http.get<Tag>(`${API_URL}/tags/${id}`);
+    return this.http.get<Tag>(`${API_URL}/tags/getid/${id}`);
   }
 
   updateTag(id) {
@@ -54,10 +55,12 @@ export class TagOperationsService {
   }
 
   createTag(Tag): Observable<Tag> {
-    return this.http.post<Tag>(`${API_URL}/tags`, Tag);
+    //return this.http.post<Tag>(`${API_URL}/tags`, Tag);
+    return this.http.post<Tag>(`${API_URL}/tags/create`, Tag);
+
   }
 
   createContent(inputContent: InputContentDTO) {
-    return this.http.post(`${API_URL}content/register`, inputContent);
+    return this.http.post(`${API_URL}/content/register`, inputContent);
   }
 }

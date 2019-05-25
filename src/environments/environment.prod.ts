@@ -2,6 +2,5 @@ export const environment = {
   production: true
 };
 
-//export const API_URL = 'http://localhost:8080/cms'; //old url
-export const API_URL = 'http://localhost'; //url for testing
-//export const API_URL = 'http://localhost/ui'; //url for production build
+//export const API_URL = 'http://ec2-54-146-4-31.compute-1.amazonaws.com:8080/CmsForce'; //old url
+export const API_URL = 'http://ec2-54-146-4-31.compute-1.amazonaws.com:8080/CmsForce'; //url for when jenkins build issue gets resolved
