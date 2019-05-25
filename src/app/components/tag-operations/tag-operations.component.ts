@@ -18,7 +18,6 @@ export class TagOperationsComponent implements OnInit {
   content: Content;
   module: Module;
   tags: Tag[];
-
   contents: Content[];
   modules: string[];
   message: string;

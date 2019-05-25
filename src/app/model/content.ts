@@ -10,5 +10,6 @@ export class Content {
     public updatedDate: Date  // placeholder for updated date
   ) {
   }
+
 }
 
