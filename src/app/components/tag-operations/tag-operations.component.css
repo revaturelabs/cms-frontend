@@ -1,5 +1,5 @@
 .mat-form-field {
-    width: 30%;
+    width: 60%;
     align-content: center;
     color: black;
     background-color:white;
@@ -11,10 +11,14 @@
 }
 
 .mat-select{
-    width:350px;
+    width:100%;
     color:black;
     background-color: white;
 }
+
+.mat-select-placeholder {
+    color:red !important;
+  }
 
 .mat-raised-button{
     text-align: center;
