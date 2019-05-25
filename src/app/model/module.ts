@@ -5,9 +5,11 @@
  */
 export class Module {
     constructor(
-        public id: number,            //Primary key of module
-        public name: string,          //Name of the module
-        public isActive: boolean      //Is this module active? (i.e. deactivate module for old Java version)
+        public moduleId: number,            //Primary key of module
+        public moduleName: string,          //Name of the module
+        public active: boolean,      //Is this module active? (i.e. deactivate module for old Java version)
+        public dateCreated: Date,
+        public dateUpdated: Date
         //public createdDate: number  //placeholder for created date
         //public updatedDate: number  //placeholder for updated date
     ) {
