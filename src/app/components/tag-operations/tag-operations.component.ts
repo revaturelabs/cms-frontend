@@ -60,17 +60,6 @@ export class TagOperationsComponent implements OnInit {
     );
   }
 
-  // deleteTag(id) {
-  //   console.log(`delete tag ${id}`);
-  //   this.tagService.deleteTag(id).subscribe(
-  //     response => {
-  //       console.log(response);
-  //       this.message = `Delete of Tag ${id} Successful!`;
-  //       this.refreshTags();
-  //     }
-  //   );
-  // }
-
   // updateTag(id) {
   //   this.router.navigate(['tag', id]);
   // }
