@@ -4,7 +4,6 @@ import {Tag} from '../model/tag';
 import { API_URL } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import {Content} from '../model/content';
-import {Module} from '../model/module';
 import {InputContentDTO} from '../model/content.dto';
 
 
@@ -19,14 +18,12 @@ export class TagOperationsService {
 
   retrieveAllTags() {
 
-    //return this.http.get<Tag[]>(`${API_URL}tags/getall`);
     return this.http.get<Tag[]>(`${API_URL}/tags/getall`);
 
   }
 
   retrieveAllModules() {
-    //return this.http.get<string[]>(`${API_URL}module/alltags`);
-    return this.http.get<string[]>(`${API_URL}/module/allmodules`);
+    return this.http.get<string[]>(`${API_URL}/module/alltags`);
 
   }
 
@@ -53,14 +50,8 @@ export class TagOperationsService {
     return this.http.get<Tag>(`${API_URL}/tags/getid/${id}`);
   }
 
-  /**
-   * Sends a put request to update a tag 
-   * @param Tag 
-   */
-  updateTag(Tag) {
-    //return this.http.put<Tag>(`${API_URL}/tags/id/${id}`, id);
-    //update param is being changed to Tag because the method update is expecting a Tag object
-    return this.http.put<Tag>(`${API_URL}/tags/update/`, Tag);
+  updateTag(id) {
+    return this.http.put<Tag>(`${API_URL}/tags/id/${id}`, id);
   }
 
   createTag(Tag): Observable<Tag> {
@@ -70,6 +61,6 @@ export class TagOperationsService {
   }
 
   createContent(inputContent: InputContentDTO) {
-    return this.http.post(`${API_URL}content/register`, inputContent);
+    return this.http.post(`${API_URL}/content/register`, inputContent);
   }
 }
