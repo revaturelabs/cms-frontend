@@ -23,7 +23,7 @@
   </mat-form-field>   -->
   <table>
     <tr *ngFor="let tag of tags">
-      <td>{{tag.name}}</td>
+      <td>{{tag.tagName}}</td>
       <td><button (click)="removeTag(tag)">Remove</button></td>
     </tr>
   </table>

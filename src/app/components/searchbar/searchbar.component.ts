@@ -32,7 +32,7 @@ export class SearchbarComponent implements OnInit {
     const tag = new Tag(0, name, '', 0, 0, null, null, null, null);
     this.tags.push(tag);
     console.log(this.tags);
-    this.postContentsByTag(this.tags);
+     this.postContentsByTag(this.tags);
   }
 
   /**
