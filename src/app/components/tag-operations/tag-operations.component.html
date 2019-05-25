@@ -1,4 +1,4 @@
-<form class="input-fields" (ngSubmit)="!tagForm.invalid && submitCreate()" #tagForm="ngForm">
+<form class="input-fields" (ngSubmit)="submitCreate()" name="tagOperationForm" #tagOperationForm="ngForm">
 
   <mat-toolbar color="primary">
     <mat-toolbar-row>
@@ -7,12 +7,13 @@
 
       <div class="example-container">
         <mat-form-field class="full-width-field">
-          <input matInput placeholder="Input">
+          <input matInput placeholder="Input" name="tagName" >
         </mat-form-field>
 
         <mat-form-field class="full-width-field">
           <mat-select placeholder="Select" multiple>
-            <mat-option value="option">JAVA</mat-option>
+          <!--            *ngFor="let tag in tags"-->
+<!--            <mat-option (click)="form.tagName = tag.name" value="option">{{tag.name}}</mat-option>-->
             <mat-option value="option">SalesForce</mat-option>
             <mat-option value="option">Testing</mat-option>
             <mat-option value="option">.NET</mat-option>
@@ -44,8 +45,10 @@
 
   <mat-label>URL: </mat-label>
   <mat-form-field class="full-width-field">
-    <input matInput placeholder="Enter Git URL" required="required" />
+    <input matInput placeholder="Enter Git URL" [(ngModel)]="form.content.url" required="required" name="contentUrl" #contentUrl="ngModel"/>
+
   </mat-form-field>
+  {{form.content.url}}
   <br />
   <mat-label>Select Category: </mat-label>
   <mat-form-field class="full-width-field">
@@ -60,6 +63,7 @@
     <textarea matInput placeholder="Provide a short description" required="required"></textarea>
   </mat-form-field>
 </form>
+
 <br>
 <button mat-raised-button style="color: #7D827E " (click)="submitCreate()">Submit</button>
 <br>

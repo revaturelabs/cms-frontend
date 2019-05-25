@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TagOperationsComponent } from './components/tag-operations/tag-operations.component';
@@ -11,9 +11,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {MyOwnCustomMaterialModule} from './material';
 import {MatFormFieldModule, MatInputModule, MatMenuModule} from '@angular/material';
 import {NavbarComponent} from './components/navbar/navbar.component';
-import {HttpClientModule} from '@angular/common/http';
 import {ResultComponent} from './components/result/result.component';
 import { SearchPageComponent } from './components/search-page/search-page.component';
+import { ResultService } from './services/result.service'
 
 
 @NgModule({
@@ -26,6 +26,7 @@ import { SearchPageComponent } from './components/search-page/search-page.compon
     SearchPageComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -40,7 +41,7 @@ import { SearchPageComponent } from './components/search-page/search-page.compon
     FormsModule,
     MatButtonModule
   ],
-  providers: [],
+  providers: [ResultService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
