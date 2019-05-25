@@ -9,7 +9,7 @@ import { API_URL } from 'src/environments/environment';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-    'Authorization': 'my-auth-token' // This is supposed to be a key, not quite sure what ours will be, mysteries abound!
+    Authorization: 'my-auth-token' // This is supposed to be a key, not quite sure what ours will be, mysteries abound!
   })
 };
 
@@ -37,7 +37,7 @@ export class SearchService {
   postAllContents(): Observable<Content[]> {
     return this.http.post<Content[]>(API_URL, { /* NOTHING */ }, httpOptions)
       .pipe(
-        //catchError(this.handleError('getContentsByTag', tagName))
+        // catchError(this.handleError('getContentsByTag', tagName))
       );
   }
 
@@ -45,7 +45,7 @@ export class SearchService {
    * Sends a get request for retrieving all contents by tag name
    */
   getContentsByTag(tagName: Tag[]): Observable<Content[]> {
-    return this.http.get<Content[]>(API_URL + "/findByTags/" + tagName, httpOptions);
+    return this.http.get<Content[]>(API_URL + '/findByTags/' + tagName, httpOptions);
   }
 
   /**
@@ -53,9 +53,9 @@ export class SearchService {
    * throws an error if unsuccessful
    */
   postContentsByTag(tagName: Tag[]): Observable<Content[]> {
-    return this.http.post<Content[]>(API_URL + "/findByTags", { tagName }, httpOptions)
+    return this.http.post<Content[]>(API_URL + '/findByTags', { tagName }, httpOptions)
       .pipe(
-        //catchError(this.handleError('getContentsByTag', tagName))
+        // catchError(this.handleError('getContentsByTag', tagName))
       );
   }
 
@@ -63,7 +63,7 @@ export class SearchService {
    * Sends a get request for retrieving all contents by category
    */
   getContentsByCategory(categoryName: string): Observable<Content[]> {
-    return this.http.get<Content[]>(API_URL + "/findByCategory/" + categoryName, httpOptions);
+    return this.http.get<Content[]>(API_URL + '/findByCategory/' + categoryName, httpOptions);
   }
 
   /**
@@ -71,9 +71,9 @@ export class SearchService {
    * throws an error if unsuccessful
    */
   postContentsByCategory(categoryName: string): Observable<Content[]> {
-    return this.http.post<Content[]>(API_URL + "/findByCategory/", { categoryName }, httpOptions)
+    return this.http.post<Content[]>(API_URL + '/findByCategory/', { categoryName }, httpOptions)
       .pipe(
-        //catchError(this.handleError('getContentsByTag', tagName))
+        // catchError(this.handleError('getContentsByTag', tagName))
       );
   }
 
@@ -81,7 +81,7 @@ export class SearchService {
    * Sends a get request for retrieving all contents by given category and tags array
    */
   getContentsByTagAndCategory(tags: Tag[], category: string): Observable<Content[]> {
-    return this.http.get<Content[]>(API_URL + "/findbytagsandcategory/" + tags + "," + category, httpOptions);
+    return this.http.get<Content[]>(API_URL + '/findbytagsandcategory/' + tags + ',' + category, httpOptions);
   }
 
   /**
@@ -89,9 +89,9 @@ export class SearchService {
    * throws an error if unsuccessful
    */
   postContentsByTagAndCategory(tags: Tag[], category: string): Observable<Content[]> {
-    return this.http.post<Content[]>(API_URL + "/findbytagsandcategory?category=" + category, { tags }, httpOptions)
+    return this.http.post<Content[]>(API_URL + '/findbytagsandcategory?category=' + category, { tags }, httpOptions)
       .pipe(
-        //catchError(this.handleError('getContentsByTag', tagName))
+        // catchError(this.handleError('getContentsByTag', tagName))
       );
   }
   

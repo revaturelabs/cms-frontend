@@ -59,6 +59,18 @@ export class ResultComponent implements OnInit {
   /**
    * On initialization call the displayResult method
    */
+
+  // public name: string;         // The tagName user gave content
+  // public url: string;          // The url user supplied that links to the content
+  // public tags: number[];        // Array of every tag user assigned to this content
+  // // public createdDate: number  //placeholder for created date
+  // // public updatedDate: number  //placeholder for updated date
+  //
+  // // Populating with test data
+  // public results: Content[] = [ new Content(1, '2', 'Description of Sample Content Goes Here',
+  //   'Sample Content Name', 'http://urlgoeshere.com', [ 0, 1, 2, 3, 4, 5], null, null)];
+  //
+
   ngOnInit() {
     // this.displayResult();
   }
