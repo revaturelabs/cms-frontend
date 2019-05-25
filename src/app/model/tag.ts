@@ -12,8 +12,6 @@ export class Tag {
     public dateUpdated: Date,
     public content: Content[],
     public modules: Module[]
-
-
   ) {
   }
 }

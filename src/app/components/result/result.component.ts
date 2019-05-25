@@ -19,6 +19,8 @@ export class ResultComponent implements OnInit {
     this.router = router;
   }
 
+  
+
   // public contents: Content[];
   public id: number;           // Primary key of content
   public category: string;      // The Category user gave content (ie. code example, notes)
@@ -33,11 +35,13 @@ export class ResultComponent implements OnInit {
   /**
    *  Populating with test data
    */
+
   // public results:Content[] = [ new Content(1,
   //   "2",
   //   "Description of Sample Content Goes Here",
   //   "Sample Content Name",
   //   "http://urlgoeshere.com",
+
   // public results:Content[] = [ new Content(1, 
   //   "2", 
   //   "Description of Sample Content Goes Here", 
