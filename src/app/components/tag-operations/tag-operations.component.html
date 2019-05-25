@@ -5,24 +5,12 @@
       <span></span> <br>
       <div class="example-container">
         <mat-form-field class="full-width-field">
-          <input matInput (change)="setTagName($event)" placeholder="Input" name="tagName" >
+          <input matInput (change)="setTagName($event)" placeholder="Tag Name" name="tagName" >
         </mat-form-field>
         <mat-form-field class="full-width-field" >
           <mat-label>Module</mat-label>
-          <mat-select *ngFor="let module of modules" placeholder="Select" multiple>
-            <mat-option (click)="inputContent.module = module" value="option">{{module}}</mat-option>
-            <!--            <mat-option value="option">SalesForce</mat-option>-->
-            <!--            <mat-option value="option">Testing</mat-option>-->
-            <!--            <mat-option value="option">.NET</mat-option>-->
-            <!--            <mat-option value="option">Spring</mat-option>-->
-            <!--            <mat-option value="option">Spring MVC</mat-option>-->
-            <!--            <mat-option value="option">Spring Boot</mat-option>-->
-            <!--            <mat-option value="option">Spring Security</mat-option>-->
-            <!--            <mat-option value="option">SQL</mat-option>-->
-            <!--            <mat-option value="option">Angular</mat-option>-->
-            <!--            <mat-option value="option">JavaScript</mat-option>-->
-            <!--            <mat-option value="option">TypeScript</mat-option>-->
-            <!--            <mat-option value="option">Unix</mat-option>-->
+          <mat-select  placeholder="Select" multiple>
+            <mat-option (click)="inputContent.module = module" *ngFor="let module of modules" value="option">{{module}}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
