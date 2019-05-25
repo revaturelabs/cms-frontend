@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Tag } from '../../model/tag';
 import { SearchService } from '../../services/search.service';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Content } from 'src/app/model/content';
 
 /**
  * Component for handling the search bar functionality
@@ -18,7 +19,8 @@ export class SearchbarComponent implements OnInit {
   }
 
   tags: Array<Tag>;
-
+  contents:Content[];
+  
   ngOnInit() {
   }
 
@@ -38,6 +40,9 @@ export class SearchbarComponent implements OnInit {
   removeTag(tag) {
     const index = this.tags.indexOf(tag);
     this.tags.splice(index, 1);
+  }
+
+  postAllContents(){this.searchService.postAllContents().subscribe(results => this.contents = results );
   }
 
 }
