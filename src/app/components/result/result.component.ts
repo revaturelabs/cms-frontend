@@ -55,6 +55,6 @@ export class ResultComponent implements OnInit {
    * On initialization call the displayResult method
    */
   ngOnInit() {
-    // this.displayResult();
+      this.displayAllResult();
   }
 }
