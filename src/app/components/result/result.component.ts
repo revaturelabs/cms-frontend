@@ -38,6 +38,11 @@ export class ResultComponent implements OnInit {
   //   "Description of Sample Content Goes Here",
   //   "Sample Content Name",
   //   "http://urlgoeshere.com",
+  // public results:Content[] = [ new Content(1, 
+  //   "2", 
+  //   "Description of Sample Content Goes Here", 
+  //   "Sample Content Name", 
+  //   "http://urlgoeshere.com", 
   //   [ 0, 1,2,3,4,5], new Date(1), new Date(0))];
 
   /**

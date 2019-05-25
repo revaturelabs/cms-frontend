@@ -14,7 +14,6 @@ export class TagOperationsService {
 
   constructor(private http: HttpClient) { }
 
-<<<<<<< HEAD
    // Sends a get request to retrieve an array of tags
 
   retrieveAllTags() {
@@ -35,30 +34,6 @@ export class TagOperationsService {
   retrieveTag(id) {
     // console.log('inside retrieve employee');
     return this.http.get<Tag>(`${API_URL}/tags/${id}`);
-=======
-  /**
-   * Sends a get request to retrieve all tags
-   */
-  retrieveAllTags(): Observable<Tag[]> {
-    return this.http.get<Tag[]>(`${API_URL}/tags`);
-  }
-
-  /**
-   * Sends a delete request to remove a tag by id
-   * @param id 
-   */
-  deleteTag(id) {
-    return this.http.delete<Tag>(`${API_URL}/tags/id/${id}`, id);
-  }
-
-  /**
-   * Sends a get request to retrieve a tag by id
-   * @param id 
-   */
-  retrieveTag(id): Observable<Tag> {
-    console.log('inside retrieve employee');
-    return this.http.get<Tag>(`${API_URL}/tags/id/${id}`);
->>>>>>> ff97f7f70d92fe8b4044b31b725528af04f94bf0
   }
 
   /**
