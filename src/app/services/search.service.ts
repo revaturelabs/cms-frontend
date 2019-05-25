@@ -1,62 +1,98 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators'; 
+import { catchError } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Result } from '../model/result.model';
+import { Content } from '../model/content';
 import { Tag } from '../model/tag';
-import { API_URL } from '../app.constants';
+import { API_URL } from 'src/environments/environment'; 
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type':  'application/json',
-    'Authorization': 'my-auth-token'
+    'Content-Type': 'application/json',
+    Authorization: 'my-auth-token' // This is supposed to be a key, not quite sure what ours will be, mysteries abound!
   })
 };
 
+/**
+ * Provides get and post request methods to retrieve all contents, retrieve contents by tags, category, or tags and category
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class SearchService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getAllResults():Observable<Result[]>{
-    // Get Method
-    //return this.http.get<Result[]>(API_URL);
-    // POST Method
-    return this.http.post<Result[]>(API_URL, { /* NOTHING */ }, httpOptions  )
-    .pipe(
-      //catchError(this.handleError('getResultsByTag', tagName))
-    );
+  /**
+   * Sends a get request for retrieving all contents
+   */
+  getAllContents(): Observable<Content[]> {
+    return this.http.get<Content[]>(API_URL, httpOptions);
   }
 
-  getResultsByTag(tagName:Tag[]):Observable<Result[]>{
-    // GET Method
-    //return this.http.get<Result[]>(API_URL + "/findByTags/" + tagName);
-    // POST Method
-    return this.http.post<Result[]>(API_URL  + "/findByTags", { tagName } , httpOptions  )
-    .pipe(
-      //catchError(this.handleError('getResultsByTag', tagName))
-    );
+  /**
+   * Sends a post request for retrieving all contents
+   * throws an error if unsuccessful
+   */
+  postAllContents(): Observable<Content[]> {
+    return this.http.post<Content[]>(API_URL, { /* NOTHING */ }, httpOptions)
+      .pipe(
+        // catchError(this.handleError('getContentsByTag', tagName))
+      );
   }
 
-  getResultsByCategory(categoryName:string):Observable<Result[]>{
-    // GET Method    
-    //return this.http.get<Result[]>(API_URL + "/findByTags/" + categoryName);
-    // POST Method
-    return this.http.post<Result[]>(API_URL+ "/findByCategory/", { categoryName }, httpOptions  )
-    .pipe(
-      //catchError(this.handleError('getResultsByTag', tagName))
-    );
+  /**
+   * Sends a get request for retrieving all contents by tag name
+   */
+  getContentsByTag(tagName: Tag[]): Observable<Content[]> {
+    return this.http.get<Content[]>(API_URL + '/findByTags/' + tagName, httpOptions);
   }
 
-  getResultsByTagAndCategory(tags:Tag[], category:string ):Observable<Result[]>{
-    // GET Method
-    //return this.http.get<Result[]>(API_URL + "/findByTagsAndCategory/" + tagsAndCategory);
-    // POST Method
-    return this.http.post<Result[]>(API_URL + "/findByTagsAndCategory/", { tags, category }, httpOptions  )
-    .pipe(
-      //catchError(this.handleError('getResultsByTag', tagName))
-    );
+  /**
+   * Sends a post request for retrieving all contents by tag name
+   * throws an error if unsuccessful
+   */
+  postContentsByTag(tagName: Tag[]): Observable<Content[]> {
+    return this.http.post<Content[]>(API_URL + '/findByTags', { tagName }, httpOptions)
+      .pipe(
+        // catchError(this.handleError('getContentsByTag', tagName))
+      );
   }
+
+  /**
+   * Sends a get request for retrieving all contents by category
+   */
+  getContentsByCategory(categoryName: string): Observable<Content[]> {
+    return this.http.get<Content[]>(API_URL + '/findByCategory/' + categoryName, httpOptions);
+  }
+
+  /**
+   * Sends a post request for retrieving all contents by category
+   * throws an error if unsuccessful
+   */
+  postContentsByCategory(categoryName: string): Observable<Content[]> {
+    return this.http.post<Content[]>(API_URL + '/findByCategory/', { categoryName }, httpOptions)
+      .pipe(
+        // catchError(this.handleError('getContentsByTag', tagName))
+      );
+  }
+
+  /**
+   * Sends a get request for retrieving all contents by given category and tags array
+   */
+  getContentsByTagAndCategory(tags: Tag[], category: string): Observable<Content[]> {
+    return this.http.get<Content[]>(API_URL + '/findbytagsandcategory/' + tags + ',' + category, httpOptions);
+  }
+
+  /**
+   * Sends a post request for retrieving all contents by given category and tags array
+   * throws an error if unsuccessful
+   */
+  postContentsByTagAndCategory(tags: Tag[], category: string): Observable<Content[]> {
+    return this.http.post<Content[]>(API_URL + '/findbytagsandcategory?category=' + category, { tags }, httpOptions)
+      .pipe(
+        // catchError(this.handleError('getContentsByTag', tagName))
+      );
+  }
+  
 }
