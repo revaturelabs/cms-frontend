@@ -4,12 +4,8 @@ import {Tag} from '../model/tag';
 import { API_URL } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import {Content} from '../model/content';
-import {Module} from '../model/module';
 import {InputContentDTO} from '../model/content.dto';
 
-/**
- * Provides methods to create a tag, update a tag, retrieve a tag by id, retrieve all tags, and delete a tag by id
- */
 @Injectable({
   providedIn: 'root'
 })
@@ -21,24 +17,26 @@ export class TagOperationsService {
 
   retrieveAllTags() {
 
-    return this.http.get<Tag[]>(`${API_URL}tags/getall`);
+    return this.http.get<Tag[]>(`${API_URL}/tags/getall`);
 
   }
 
   retrieveAllModules() {
-    return this.http.get<string[]>(`${API_URL}module/alltags`);
+    return this.http.get<string[]>(`${API_URL}/module/alltags`);
 
   }
 
   retrieveAllContents() {
-    return this.http.get<Content[]>(`${API_URL}/tags`);
+    //return this.http.get<Content[]>(`${API_URL}/tags`);
+    return this.http.get<Content[]>(`${API_URL}/content/findall`);
 
   }
 
   //  * Sends a delete request to remove a tag by
   //  * @param id
     deleteTag(id) {
-    return this.http.delete(`${API_URL}/tags/${id}`);
+    //return this.http.delete(`${API_URL}/tags/${id}`);
+    return this.http.delete(`${API_URL}/tags/delete/${id}`);
   }
 
   // /**
@@ -47,26 +45,21 @@ export class TagOperationsService {
   //  */
   retrieveTag(id) {
     // console.log('inside retrieve employee');
-    return this.http.get<Tag>(`${API_URL}/tags/${id}`);
+    //return this.http.get<Tag>(`${API_URL}/tags/${id}`);
+    return this.http.get<Tag>(`${API_URL}/tags/getid/${id}`);
   }
 
-  /**
-   * Sends a put request to update a tag by id
-   * @param id 
-   */
   updateTag(id) {
     return this.http.put<Tag>(`${API_URL}/tags/id/${id}`, id);
   }
 
-  /**
-   * Sends a post request to create a new tag
-   * @param Tag 
-   */
   createTag(Tag): Observable<Tag> {
-    return this.http.post<Tag>(`${API_URL}/tags`, Tag);
+    //return this.http.post<Tag>(`${API_URL}/tags`, Tag);
+    return this.http.post<Tag>(`${API_URL}/tags/create`, Tag);
+
   }
 
   createContent(inputContent: InputContentDTO) {
-    return this.http.post(`${API_URL}content/register`, inputContent);
+    return this.http.post(`${API_URL}/content/register`, inputContent);
   }
 }

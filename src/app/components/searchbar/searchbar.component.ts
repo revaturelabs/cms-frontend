@@ -45,17 +45,21 @@ export class SearchbarComponent implements OnInit {
     this.postContentsByTag(this.tags);
   }
 
-  postAllContents(){this.searchService.postAllContents().subscribe(
-    results => this.contents = results ); 
-  }
+  // postAllContents(){this.searchService.postAllContents().subscribe(
+  //   results => this.contents = results ); 
+  // }
 
   postContentsByTag(tagName: Tag[]){this.searchService.postContentsByTag(tagName).subscribe(
     results => this.contents = results ); 
   }
  
-  postContentsByCategory(categoryName: string){this.searchService.postContentsByCategory(categoryName).subscribe(
+  // postContentsByCategory(categoryName: string){this.searchService.postContentsByCategory(categoryName).subscribe(
+  //   results => this.contents = results ); 
+  // }
+  getContentsByCategory(categoryName: string){this.searchService.getContentsByCategory(categoryName).subscribe(
     results => this.contents = results ); 
   }
+
 
   postContentsByTagAndCategory(tags: Tag[], category: string){
     this.searchService.postContentsByTagAndCategory(tags, category).subscribe(
