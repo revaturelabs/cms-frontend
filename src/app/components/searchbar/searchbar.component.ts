@@ -24,10 +24,9 @@ export class SearchbarComponent implements OnInit {
   ngOnInit() {
   }
 
-  /**
-   * Adds a tag with default data to the tags array
-   * @param name name
-   */
+  //  Adds a tag with default data to the tags array
+  //  @param name name
+
   addTag(name) {
     const tag = new Tag(0, name, '', 0, 0, null, null, null, null);
     this.tags.push(tag);

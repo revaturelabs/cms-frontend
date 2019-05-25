@@ -7,6 +7,5 @@ export class TagOperationForm {
               public content: Content,
               public module: Module
               ) {
-
   }
 }
