@@ -3,4 +3,5 @@ export const environment = {
 };
 
 //export const API_URL = 'http://localhost:8080/cms'; //old url
-export const API_URL = 'http://localhost'; //url for when jenkins build issue gets resolved
+export const API_URL = 'http://localhost'; //url for testing
+//export const API_URL = 'http://localhost/ui'; //url for production build

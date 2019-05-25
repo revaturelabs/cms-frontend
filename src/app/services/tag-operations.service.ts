@@ -8,9 +8,6 @@ import {Module} from '../model/module';
 import {InputContentDTO} from '../model/content.dto';
 
 
-/**
- * Provides methods to create a tag, update a tag, retrieve a tag by id, retrieve all tags, and delete a tag by id
- */
 @Injectable({
   providedIn: 'root'
 })
@@ -46,23 +43,16 @@ export class TagOperationsService {
   //  * Sends a get request to retrieve a tag and prints a message to the console
   //  * @param id
   //  */
+
   retrieveTag(id) {
     // console.log('inside retrieve employee');
     return this.http.get<Tag>(`${API_URL}/tags/${id}`);
   }
 
-  /**
-   * Sends a put request to update a tag by id
-   * @param id 
-   */
   updateTag(id) {
     return this.http.put<Tag>(`${API_URL}/tags/id/${id}`, id);
   }
 
-  /**
-   * Sends a post request to create a new tag
-   * @param Tag 
-   */
   createTag(Tag): Observable<Tag> {
     return this.http.post<Tag>(`${API_URL}/tags`, Tag);
   }
