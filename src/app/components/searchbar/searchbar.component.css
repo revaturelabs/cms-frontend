@@ -12,4 +12,10 @@
     color: #FF4500;
 }
 
-
+.searchbar {
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    padding: 10px;
+    /* margin: 10px; */
+}
