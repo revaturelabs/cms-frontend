@@ -1,5 +1,5 @@
-import { Content } from './content';
-import { Module } from './module';
+import {Content} from './content';
+import {Module} from './module';
 
 export class Tag {
   constructor(
@@ -11,8 +11,9 @@ export class Tag {
     public dateCreated: Date,
     public dateUpdated: Date,
     public content: Content[],
-    public modules: Module[]    
-    
+    public modules: Module[]
+
+
   ) {
   }
 }
