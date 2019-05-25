@@ -6,8 +6,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
-    imports: [MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule,MatFormFieldModule,MatSelectModule],
-    exports: [MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule,MatFormFieldModule,MatSelectModule],
+    imports: [MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule, MatFormFieldModule, MatSelectModule],
+    exports: [MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule, MatFormFieldModule, MatSelectModule],
 })
 
-export class MyOwnCustomMaterialModule{ }
+export class MyOwnCustomMaterialModule { }
