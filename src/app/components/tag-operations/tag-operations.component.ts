@@ -22,7 +22,7 @@ export class TagOperationsComponent implements OnInit {
   modules: string[];
   message: string;
   form: TagOperationForm;
-  inputContent = new InputContentDTO(new Content(0, '', '', '', '', [], null, null),  []);
+  inputContent = new InputContentDTO(new Content(0, '', '', '', '', [], null, null),  [], null);
 
   constructor(
     private tagService: TagOperationsService,
