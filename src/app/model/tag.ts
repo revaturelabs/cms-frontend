@@ -1,17 +1,17 @@
-import { Content } from './content';
-import { Module } from './module';
+import {Content} from './content';
+import {Module} from './module';
 
 export class Tag {
   constructor(
     public id: number,
+    public tagName: string,
+    public type: string,
     public contentId: number,
-    public category:string, // this is what the backend calls "category" of content
-    public name: string,
     public moduleId: number,
-    public contentIds: Content[],
-    public modules: Module[],
-    public created: Date,
-    public updated: Date
+    public dateCreated: Date,
+    public dateUpdated: Date,
+    public content: Content[],
+    public modules: Module[]
   ) {
   }
 }

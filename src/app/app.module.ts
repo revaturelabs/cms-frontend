@@ -1,24 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TagOperationsComponent } from './components/tag-operations/tag-operations.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MyOwnCustomMaterialModule} from './material';
-import {MatFormFieldModule, MatInputModule, MatMenuModule, MatIconModule, MatStepperModule} from '@angular/material';
-import {MatListModule} from '@angular/material/list'; 
-import {MatTreeModule} from '@angular/material/tree';
-import {MatCardModule} from '@angular/material/card';
-import {MatExpansionModule} from '@angular/material/expansion';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { ResultComponent } from './components/result/result.component';
-import { ResultService } from './services/result.service';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule, MatInputModule, MatMenuModule, MatListModule, MatTreeModule, MatCardModule, MatIconModule, MatExpansionModule} from '@angular/material';
+import {NavbarComponent} from './components/navbar/navbar.component';
+import {ResultComponent} from './components/result/result.component';
 import { SearchPageComponent } from './components/search-page/search-page.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { ResultService } from './services/result.service';
+import { MyOwnCustomMaterialModule } from './material';
+
 
 @NgModule({
   declarations: [

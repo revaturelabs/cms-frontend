@@ -23,11 +23,10 @@
   </mat-form-field>   -->
   <table>
     <tr *ngFor="let tag of tags">
-      <td>{{tag.name}}</td>
+      <td>{{tag.tagName}}</td>
       <td><button (click)="removeTag(tag)">Remove</button></td>
     </tr>
   </table>
-
   <!--
       <table mat-table class="mat-elevation-28">
     <ng-container matColumnDef="select">
@@ -42,3 +41,9 @@
   
   </table>-->
 </div>
+
+
+
+<!-- tag to pass from searchbar to result component -->
+<app-result [results] = "results"></app-result>
+
