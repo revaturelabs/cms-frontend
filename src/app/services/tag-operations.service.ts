@@ -6,7 +6,6 @@ import { Observable } from 'rxjs';
 import {Content} from '../model/content';
 import {InputContentDTO} from '../model/content.dto';
 
-
 @Injectable({
   providedIn: 'root'
 })

@@ -22,7 +22,7 @@ export class TagOperationsComponent implements OnInit {
   modules: string[];
   message: string;
   form: TagOperationForm;
-  inputContent = new InputContentDTO(new Content(0, '', '', '', '', [], null, null),  [], new Module(0, '', true, null, null));
+  inputContent = new InputContentDTO(new Content(0, [], '', '', '', '', null, null),  [], new Module(0, '', true, null, null));
 
   constructor(
     private tagService: TagOperationsService,
@@ -30,9 +30,9 @@ export class TagOperationsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.form = new TagOperationForm(new Tag(null, null, '', 0, null, null, null, null, null),
-      new Content(null, '', '', '', '', null, null, null),
-      new Module(null, '', null, null, null ));
+    this.form = new TagOperationForm(new Tag(0, '', '', 0, 0, null, null, [], []),
+      new Content(0, [], '', '', '', '', null, null),
+      new Module(0, '', false, null, null ));
     this.refreshTags();
     this.refreshModules();
     this.refreshContents();
