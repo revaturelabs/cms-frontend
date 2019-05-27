@@ -22,14 +22,13 @@ export class SearchbarComponent implements OnInit {
   //   "Sample Content Name", 
   //   "http://urlgoeshere.com", 
   //   [ 0, 1,2,3,4,5], new Date(1), new Date(0))];
-  public results: Content[];
 
   constructor(private searchService: SearchService) {
     this.tags = [];
   }
 
   tags: Array<Tag>;
-   contents:Content[]
+  contents:Content[]
 
   ngOnInit() {
   }

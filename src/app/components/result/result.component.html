@@ -1,11 +1,11 @@
 <div class="style">
-  <mat-expansion-panel *ngFor="let eachResult of results" >
+  <mat-expansion-panel *ngFor="let eachResult of contents" >
     <mat-expansion-panel-header>
       Name: {{ eachResult.name | uppercase}} 
     </mat-expansion-panel-header>
     <b>Tags:</b> {{ eachResult.tags}} <br>
     <b>Description:</b> {{eachResult.description}}<br>
-    <b>Last Updated:</b> {{eachResult.updatedDate}}<br> 
+    <b>Last Updated:</b> {{eachResult.dateUpdated}}<br> 
     <button mat-button> <b>Link:</b> <a href="{{ eachResult.url}}">{{ eachResult.url}}</a><br></button>
   </mat-expansion-panel>
   </div>
