@@ -17,12 +17,11 @@ export class SearchbarComponent implements OnInit {
 
   //dummy data to pass from searchbar to result component . Work
   // public results:Content[] = [ new Content(1, 
-  //   "2", 
+  //   []
   //   "Description of Sample Content Goes Here", 
   //   "Sample Content Name", 
   //   "http://urlgoeshere.com", 
   //   [ 0, 1,2,3,4,5], new Date(1), new Date(0))];
-  public results: Content[];
 
   constructor(private searchService: SearchService) {
     this.tags = [];
@@ -60,7 +59,8 @@ export class SearchbarComponent implements OnInit {
   // }
 
   postContentsByTag(tagName: Tag[]){this.searchService.postContentsByTag(tagName).subscribe(
-    results => this.contents = results ); 
+    data => this.contents = data );
+    console.log(this.contents);
   }
  
   // postContentsByCategory(categoryName: string){this.searchService.postContentsByCategory(categoryName).subscribe(
