@@ -1,30 +1,26 @@
 <div class="searchbar">
-
-  <mat-toolbar color="primary">
-    <mat-toolbar-row>
-        <span></span> <br>
-        <button mat-raised-button color="accent" (click)="addTag(name.value)">Search</button>
-
-      <mat-form-field class="full-width-field">
-        <input matInput #name placeholder="Search" /> <br>
-      </mat-form-field>
-
-    </mat-toolbar-row>
-  </mat-toolbar>
-  <br>
   <mat-form-field>
-      <mat-label>Category</mat-label>
+    <input matInput #name /> 
+    <mat-placeholder style="color:black"> Search </mat-placeholder>
+  </mat-form-field>
+  <div class="searchbar">
+    <mat-form-field>
+      <mat-label style="color:black" >Category</mat-label>
       <mat-select [(value)]="selected">
         <mat-option value="all">All</mat-option>
         <mat-option value="code">Code</mat-option>
         <mat-option value="exercise">Exercise</mat-option>
         <mat-option value="notes">Notes</mat-option>
       </mat-select>
-  </mat-form-field>  
-  <table>
+    </mat-form-field>
+  </div>
+  <button mat-raised-button (click)="addTag(name.value)">Search</button>
+</div>
+<div>
+  <table mat-table>
     <tr *ngFor="let tag of tags">
       <td>{{tag.tagName}}</td>
-      <td><button (click)="removeTag(tag)">Remove</button></td>
+      <td><button mat-raised-button (click)="removeTag(tag)">Remove</button></td>
     </tr>
   </table>
   <!--
@@ -43,5 +39,5 @@
 </div>
 
 <!-- tag to pass from searchbar to result component -->
-<app-result [response] = "contents"></app-result>
+<app-result [contents] = "contents"></app-result>
 

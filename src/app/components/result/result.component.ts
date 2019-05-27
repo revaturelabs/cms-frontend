@@ -28,13 +28,11 @@ export class ResultComponent implements OnInit {
   /**
    *  Populating with test data
    */
-
   // public results:Content[] = [ new Content(1,
   //   "2",
   //   "Description of Sample Content Goes Here",
   //   "Sample Content Name",
   //   "http://urlgoeshere.com",
-
   // public results:Content[] = [ new Content(1, 
   //   "2", 
   //   "Description of Sample Content Goes Here", 

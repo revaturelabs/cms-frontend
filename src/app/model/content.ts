@@ -14,5 +14,6 @@ export class Content {
     public dateUpdated: Date  // placeholder for updated date
   ) {
   }
+
 }
 
