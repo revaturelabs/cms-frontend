@@ -59,8 +59,11 @@ export class SearchbarComponent implements OnInit {
   // }
 
   postContentsByTag(tagName: Tag[]){this.searchService.postContentsByTag(tagName).subscribe(
-    data => this.contents = data );
-    console.log(this.contents);
+    response => {
+      console.log(response);
+      this.contents = response;
+    }
+    );
   }
  
   // postContentsByCategory(categoryName: string){this.searchService.postContentsByCategory(categoryName).subscribe(
