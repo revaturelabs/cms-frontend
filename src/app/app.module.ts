@@ -8,8 +8,8 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MyOwnCustomMaterialModule} from './material';
-import {MatFormFieldModule, MatInputModule, MatMenuModule, MatIconModule, MatStepperModule} from '@angular/material';
-import {MatListModule} from '@angular/material/list'; 
+import {MatFormFieldModule, MatInputModule, MatMenuModule, MatIconModule, MatStepperModule, MatAutocompleteModule, MatAutocomplete} from '@angular/material';
+import {MatListModule} from '@angular/material/list';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatCardModule} from '@angular/material/card';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -41,7 +41,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatFormFieldModule,
     MatInputModule,
     MatListModule,
-    MatToolbarModule, 
+    MatToolbarModule,
+    MatAutocompleteModule,
     MatTreeModule,
     MatCardModule,
     MatIconModule,
