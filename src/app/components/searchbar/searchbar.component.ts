@@ -23,11 +23,12 @@ export class SearchbarComponent implements OnInit {
     // private fb: FormBuilder
     ) {
     this.tags = [];
+    this.errorMessage = '';
   }
   
   tags: Array<SearchTag>;
   contents: Content[];
-
+  errorMessage: string;
   
 
   ngOnInit() {
@@ -53,6 +54,7 @@ export class SearchbarComponent implements OnInit {
     }    
     console.log(this.tags);
     this.postContentsByTag(this.tags);
+ 
   }
 
   /**
