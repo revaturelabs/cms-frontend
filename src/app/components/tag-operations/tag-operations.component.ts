@@ -29,7 +29,7 @@ export class TagOperationsComponent implements OnInit {
 
   ngOnInit() {
     this.refreshTags();
-    this.refreshModules();
+    // this.refreshModules();
     this.refreshContents();
   }
 
