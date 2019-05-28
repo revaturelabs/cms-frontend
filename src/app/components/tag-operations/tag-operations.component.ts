@@ -63,7 +63,11 @@ export class TagOperationsComponent implements OnInit {
   submitCreate() {
     console.log(this.inputContent);
     this.tagService.createContent(this.inputContent).subscribe(data => console.log(data));
-    // this.router.navigate(['tag', -1]);
+
+  }
+
+  submitToast() {
+    var x = document.getElementById("submit")
   }
 
   addTagName(tagName: string) {

@@ -5,12 +5,14 @@
       <br>
     </a>
   </div>
-  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button> -->
 </div>
+<button routerLink="search" mat-button>Search</button>
+<button routerLink="tags" mat-button>Create</button>
 <hr>
-<mat-menu #menu="matMenu">
-  <button routerLink="tags" mat-menu-item>Create</button>
-  <button routerLink="search" mat-menu-item> Search </button>
-</mat-menu>
+<!-- <mat-menu #menu="matMenu"> -->
+  <!-- <button routerLink="tags" mat-menu-item>Create</button>
+  <button routerLink="search" mat-menu-item> Search </button> -->
+<!-- </mat-menu> -->
 <mat-menu #recent="matMenu">
 </mat-menu>
