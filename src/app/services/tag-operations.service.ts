@@ -27,7 +27,7 @@ export class TagOperationsService {
   }
 
   retrieveAllContents() {
-    //return this.http.get<Content[]>(`${API_URL}/tags`);
+    // return this.http.get<Content[]>(`${API_URL}/tags`);
     return this.http.get<Content[]>(`${API_URL}/content/findall`);
 
   }
@@ -35,7 +35,7 @@ export class TagOperationsService {
   //  * Sends a delete request to remove a tag by
   //  * @param id
     deleteTag(id) {
-    //return this.http.delete(`${API_URL}/tags/${id}`);
+    // return this.http.delete(`${API_URL}/tags/${id}`);
     return this.http.delete(`${API_URL}/tags/delete/${id}`);
   }
 
@@ -45,7 +45,7 @@ export class TagOperationsService {
   //  */
   retrieveTag(id) {
     // console.log('inside retrieve employee');
-    //return this.http.get<Tag>(`${API_URL}/tags/${id}`);
+    // return this.http.get<Tag>(`${API_URL}/tags/${id}`);
     return this.http.get<Tag>(`${API_URL}/tags/getid/${id}`);
   }
 
@@ -54,7 +54,7 @@ export class TagOperationsService {
   }
 
   createTag(Tag): Observable<Tag> {
-    //return this.http.post<Tag>(`${API_URL}/tags`, Tag);
+    // return this.http.post<Tag>(`${API_URL}/tags`, Tag);
     return this.http.post<Tag>(`${API_URL}/tags/create`, Tag);
 
   }
