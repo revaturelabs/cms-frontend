@@ -1,45 +1,45 @@
 <form class="input-fields" (ngSubmit)="submitCreate()" name="tagOperationForm" #tagOperationForm="ngForm">
-  <div class="example-container" style="text-align: center" >
+  <div class="example-container" style="text-align: center">
     <mat-form-field>
-      <mat-label  style="color:#474C55" >Tag Name</mat-label>
+      <mat-label style="color:#474C55">Tag Name</mat-label>
       <mat-select placeholder="Tag Name" multiple>
         <mat-option *ngFor="let tag of tags" (click)="addTagName(tag.tagName)" [value]="tag.tagName">
           <span>{{tag.tagName}}</span>
         </mat-option>
       </mat-select>
     </mat-form-field>
-  
-  <mat-form-field>
-    <input matInput [(ngModel)]="inputContent.content.name" type="text" class="form-control" name="contentId"
-      required="required" minlength="1" />
-    <mat-placeholder style="color:#474C55"> Enter Name of Content </mat-placeholder>
-  </mat-form-field>
-  <br>
-  <mat-form-field>
-    <input matInput [(ngModel)]="inputContent.content.url" required="required" name="contentUrl"
-      #contentUrl="ngModel" />
-    <mat-placeholder style="color:#474C55"> Enter Git URL </mat-placeholder>
-  </mat-form-field>
-  <br>
-  <mat-form-field>
-    <mat-label style="color:#474C55"> Select Category </mat-label>
-    <mat-select  [(value)]="inputContent.content.category" placeholder="Select Category">
-      <mat-option value="option">All Categories</mat-option>
-      <mat-option value="Code Example">Code Example</mat-option>
-      <mat-option value="Lecture Notes">Lecture Notes</mat-option>
-      <mat-option value="Exercises">Exercises</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <br>
-  <mat-form-field>
-    <textarea matInput [(ngModel)]="inputContent.content.description" type="text" class="form-control"
-      name="content.description" required="required"></textarea>
-    <mat-placeholder style="color:#474C55"> Provide a short description </mat-placeholder>
-  </mat-form-field>
-  <br>
-  <button id="submit" mat-raised-button style="width : 15em" (click)="submitCreate()">Submit</button>
-</div>
+    <mat-form-field>
+      <input matInput [(ngModel)]="inputContent.content.name" type="text" class="form-control" name="contentId"
+        required="required" minlength="1" />
+      <mat-placeholder style="color:#474C55"> Enter Name of Content </mat-placeholder>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput [(ngModel)]="inputContent.content.url" required="required" name="contentUrl"
+        #contentUrl="ngModel" />
+      <mat-placeholder style="color:#474C55"> Enter Git URL </mat-placeholder>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label style="color:#474C55"> Select Category </mat-label>
+      <mat-select [(value)]="inputContent.content.category" placeholder="Select Category">
+        <mat-option value="option">All Categories</mat-option>
+        <mat-option value="Code Example">Code Example</mat-option>
+        <mat-option value="Lecture Notes">Lecture Notes</mat-option>
+        <mat-option value="Exercises">Exercises</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <textarea matInput [(ngModel)]="inputContent.content.description" type="text" class="form-control"
+        name="content.description" required="required"></textarea>
+      <mat-placeholder style="color:#474C55"> Provide a short description </mat-placeholder>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button style="width : 15em" (click)="submitCreate()">Submit</button>
+    <br>
+    <!-- <div id="submit">Submit Successful!</div> -->
+  </div>
 </form>
-<br>
 <br><br>
 <hr>

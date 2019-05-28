@@ -1,11 +1,11 @@
 <div class="searchbar">
   <mat-form-field>
-    <input matInput #name name="name"/> 
+    <input required matInput #name name="name" class="form-control" [(ngModel)]="searchField"/> 
     <mat-placeholder style="color:#474C55"> Search </mat-placeholder>
   </mat-form-field>
   <div class="searchbar">
   </div>
-  <button mat-raised-button (click)="addTag(name.value)">Search</button>
+  <button [disabled]="searchField==='' || searchField==null" mat-raised-button (click)="addTag(name.value)">Search</button>
 </div>
 <div>
   <table mat-table>
