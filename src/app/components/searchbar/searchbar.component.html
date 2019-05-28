@@ -1,20 +1,11 @@
 <div class="searchbar">
   <mat-form-field>
-    <input matInput #name name="name"/> 
-    <mat-placeholder style="color:black"> Search </mat-placeholder>
+    <input required matInput #name name="name" class="form-control" [(ngModel)]="searchField"/> 
+    <mat-placeholder style="color:#474C55"> Search </mat-placeholder>
   </mat-form-field>
   <div class="searchbar">
-    <!-- <mat-form-field [formGroup]="categoryForm">
-      <mat-label style="color:black" >Category</mat-label>
-      <mat-select formControlName="categoryControl">
-        <mat-option [value]="categorys" *ngfor="let category of categories">{{category}}</mat-option>
-        <mat-option value="code">Code</mat-option>
-        <mat-option value="exercise">Exercise</mat-option>
-        <mat-option value="notes">Notes</mat-option>
-      </mat-select>
-    </mat-form-field> -->
   </div>
-  <button mat-raised-button (click)="addTag(name.value)">Search</button>
+  <button [disabled]="searchField==='' || searchField==null" mat-raised-button (click)="addTag(name.value)">Search</button>
 </div>
 <div>
   <table mat-table>
@@ -23,21 +14,7 @@
       <td><button mat-raised-button (click)="removeTag(tag)">Remove</button></td>
     </tr>
   </table>
-  <!--
-      <table mat-table class="mat-elevation-28">
-    <ng-container matColumnDef="select">
-      <mat-checkbox 
-      (click) = ""
-      (change)= ""
-      [checked] = "selection.isSelected(row)"
-      [aria-label] = "checkboxLabel(row)">
-
-      </mat-checkbox>
-    </ng-container>
-  
-  </table>-->
 </div>
-
 <!-- tag to pass from searchbar to result component -->
 <app-result [contents] = "contents"></app-result>
 

@@ -68,8 +68,14 @@ export class TagOperationsComponent implements OnInit {
   submitCreate() {
     console.log(this.inputContent);
     this.tagService.createContent(this.inputContent).subscribe(data => console.log(data));
-    // this.router.navigate(['tag', -1]);
+    // this.submitToast();
   }
+
+  // submitToast() {
+  //   var x = document.getElementById("submit")
+  //   x.className = "show";
+  //   setTimeout(function(){x.className = x.className.replace("show","");},3000);
+  // }
 
   addTagName(tagName: string) {
     // this.inputContent.content.tags.push(tagName);
