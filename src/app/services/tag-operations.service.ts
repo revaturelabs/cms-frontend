@@ -17,7 +17,7 @@ export class TagOperationsService {
 
   retrieveAllTags() {
 
-    return this.http.get<Tag[]>(`${API_URL}/tags/getall`);
+    return this.http.get<Tag[]>(`${API_URL}/tags/getdistinct`);
 
   }
 
