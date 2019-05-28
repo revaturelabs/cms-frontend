@@ -19,7 +19,7 @@
 <div>
   <table mat-table>
     <tr *ngFor="let tag of tags">
-      <td>{{tag.tagName}}</td>
+      <td style="color:#474C55; font-size:40px; font-weight: bold">{{tag.tagName}}</td>
       <td><button mat-raised-button (click)="removeTag(tag)">Remove</button></td>
     </tr>
   </table>
