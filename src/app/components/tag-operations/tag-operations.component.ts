@@ -20,8 +20,6 @@ export class TagOperationsComponent implements OnInit {
   tags: Tag[];
   contents: Content[];
   modules: string[];
-  message: string;
-  form: TagOperationForm;
   inputContent = new InputContentDTO(new Content(0, [], '', '', '', '', null, null),  [], new Module(0, '', true, null, null));
 
   constructor(
@@ -30,9 +28,6 @@ export class TagOperationsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.form = new TagOperationForm(new Tag(0, '', '', 0, 0, null, null, [], []),
-      new Content(0, [], '', '', '', '', null, null),
-      new Module(0, '', false, null, null ));
     this.refreshTags();
     this.refreshModules();
     this.refreshContents();
@@ -41,6 +36,7 @@ export class TagOperationsComponent implements OnInit {
   refreshTags() {
     this.tagService.retrieveAllTags().subscribe(
       response => {
+        console.log(response);
         this.tags = response;
       }
     );
@@ -70,12 +66,8 @@ export class TagOperationsComponent implements OnInit {
     // this.router.navigate(['tag', -1]);
   }
 
-  setTagName(event: any) {
-    this.inputContent.tags.push(event.target.value);
-    this.inputContent.content.tags.push(event.taget.value);
-  }
-
-  setCategory(event: any) {
-    this.inputContent.content.category = event.target.value;
+  addTagName(tagName: string) {
+    // this.inputContent.content.tags.push(tagName);
+    this.inputContent.tags.push(tagName);
   }
 }
