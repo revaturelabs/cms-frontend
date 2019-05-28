@@ -1,18 +1,18 @@
 <div class="searchbar">
   <mat-form-field>
-    <input matInput #name /> 
+    <input matInput #name name="name"/> 
     <mat-placeholder style="color:black"> Search </mat-placeholder>
   </mat-form-field>
   <div class="searchbar">
-    <mat-form-field>
+    <!-- <mat-form-field [formGroup]="categoryForm">
       <mat-label style="color:black" >Category</mat-label>
-      <mat-select [(value)]="selected">
-        <mat-option value="all">All</mat-option>
+      <mat-select formControlName="categoryControl">
+        <mat-option [value]="categorys" *ngfor="let category of categories">{{category}}</mat-option>
         <mat-option value="code">Code</mat-option>
         <mat-option value="exercise">Exercise</mat-option>
         <mat-option value="notes">Notes</mat-option>
       </mat-select>
-    </mat-form-field>
+    </mat-form-field> -->
   </div>
   <button mat-raised-button (click)="addTag(name.value)">Search</button>
 </div>

@@ -20,7 +20,7 @@ export class ResultComponent implements OnInit {
   constructor(router: Router,private searchService : SearchService) {
     this.router = router;
   }
-  @Input() contents: Content[];
+  @Input() contents: SearchbarComponent["contents"];
   
 
   

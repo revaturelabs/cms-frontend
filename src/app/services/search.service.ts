@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Content } from '../model/content';
 import { Tag } from '../model/tag';
 import { API_URL } from 'src/environments/environment'; 
+import { SearchTag } from '../model/SearchTag';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -41,7 +42,7 @@ export class SearchService {
     //   .pipe(
     //     // catchError(this.handleError('getContentsByTag', tagName))
     //   );
-  postContentsByTag(tag: Tag[]): Observable<Content[]> {
+  postContentsByTag(tag: SearchTag[]): Observable<Content[]> {
     return this.http.post<Content[]>(`${API_URL}/content/findbytag`, tag);
   }
 
@@ -58,7 +59,7 @@ export class SearchService {
    * Sends a post request for retrieving all contents by given category and tags array
    * throws an error if unsuccessful
    */
-  postContentsByTagAndCategory(tags: Tag[], category: string): Observable<Content[]> {
+  postContentsByTagAndCategory(tags: SearchTag[], category: string): Observable<Content[]> {
     // return this.http.post<Content[]>(API_URL + '/findbytagsandcategory?category=' + category, { tags }, httpOptions)
     //   .pipe(
     //     // catchError(this.handleError('getContentsByTag', tagName))

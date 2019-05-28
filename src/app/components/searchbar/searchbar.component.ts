@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Tag } from '../../model/tag';
+import { SearchTag } from '../../model/SearchTag';
 import { SearchService } from '../../services/search.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Content } from '../../model/content';
 
 /**
@@ -15,32 +15,35 @@ import { Content } from '../../model/content';
 })
 export class SearchbarComponent implements OnInit {
 
-  //dummy data to pass from searchbar to result component . Work
-  // public results:Content[] = [ new Content(1, 
-  //   "2", 
-  //   "Description of Sample Content Goes Here", 
-  //   "Sample Content Name", 
-  //   "http://urlgoeshere.com", 
-  //   [ 0, 1,2,3,4,5], new Date(1), new Date(0))];
+  // categoryForm: FormGroup;
+  // categories = ['notes', 'exercise', 'code', 'all'];
 
-  constructor(private searchService: SearchService) {
+  constructor(
+    private searchService: SearchService,
+    // private fb: FormBuilder
+    ) {
     this.tags = [];
   }
+  
+  tags: Array<SearchTag>;
+  contents: Content[];
 
-  tags: Array<Tag>;
-  contents:Content[]
+  
 
   ngOnInit() {
+    // this.categoryForm = this.fb.group({
+    //   categoryControl: ['all']
+    // })
   }
 
   //  Adds a tag with default data to the tags array
   //  @param name name
 
   addTag(name) {
-    const tag = new Tag(0, name, '', 0, 0, null, null, null, null);
+    const tag = new SearchTag(name);
     this.tags.push(tag);
     console.log(this.tags);
-     this.postContentsByTag(this.tags);
+    this.postContentsByTag(this.tags);
   }
 
   /**
@@ -58,8 +61,12 @@ export class SearchbarComponent implements OnInit {
   //   results => this.contents = results ); 
   // }
 
-  postContentsByTag(tagName: Tag[]){this.searchService.postContentsByTag(tagName).subscribe(
-    results => this.contents = results ); 
+  postContentsByTag(tagName: SearchTag[]){this.searchService.postContentsByTag(tagName).subscribe(
+    response => {
+      console.log(response);
+      this.contents = response;
+    }
+    );
   }
  
   // postContentsByCategory(categoryName: string){this.searchService.postContentsByCategory(categoryName).subscribe(
@@ -70,7 +77,7 @@ export class SearchbarComponent implements OnInit {
   }
 
 
-  postContentsByTagAndCategory(tags: Tag[], category: string){
+  postContentsByTagAndCategory(tags: SearchTag[], category: string){
     this.searchService.postContentsByTagAndCategory(tags, category).subscribe(
       results => this.contents = results ); 
     }
