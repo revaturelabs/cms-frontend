@@ -6,6 +6,7 @@ import {TagOperationForm} from '../../model/tag.operation.form';
 import {Content} from '../../model/content';
 import {Module} from '../../model/module';
 import {InputContentDTO} from '../../model/content.dto';
+import {FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-tag-operations',
@@ -22,6 +23,10 @@ export class TagOperationsComponent implements OnInit {
   modules: string[];
   inputContent = new InputContentDTO(new Content(0, [], '', '', '', '', null, null),  [], new Module(0, '', true, null, null));
 
+  public myreg = /(^|\s)((https?:\/\/)?[\w-]+(\.[\w-]+)+\.?(:\d+)?(\/\S*)?)/gi;
+
+  url = new FormControl('', [Validators.required, Validators.pattern(this.myreg)]);
+
   constructor(
     private tagService: TagOperationsService,
     private router: Router
@@ -29,7 +34,7 @@ export class TagOperationsComponent implements OnInit {
 
   ngOnInit() {
     this.refreshTags();
-    this.refreshModules();
+    // this.refreshModules();
     this.refreshContents();
   }
 
@@ -70,4 +75,10 @@ export class TagOperationsComponent implements OnInit {
     // this.inputContent.content.tags.push(tagName);
     this.inputContent.tags.push(tagName);
   }
+
+  markTouched() {
+    this.url.markAsTouched();
+    this.url.updateValueAndValidity();
+  }
+
 }
