@@ -43,8 +43,14 @@
   </mat-form-field>
   <br>
   <mat-form-field>
-    <input matInput [(ngModel)]="inputContent.content.url" required="required" name="contentUrl" #contentUrl="ngModel" />
+    <input (focus)="markTouched()" matInput [(ngModel)]="inputContent.content.url" [formControl]="url" name="contentUrl"  />
     <mat-placeholder style="color:black"> Enter Git URL </mat-placeholder>
+    <mat-error *ngIf="url.hasError('required')">
+      Url required
+    </mat-error>
+    <mat-error *ngIf="url.hasError('pattern')">
+      Url Pattern Invalid
+    </mat-error>
   </mat-form-field>
   <br>
   <mat-form-field>
@@ -65,5 +71,5 @@
 </form>
 
 <br>
-<button mat-raised-button (click)="submitCreate()">Submit</button>
+<button mat-raised-button [disabled]="url.invalid" (click)="submitCreate()">Submit</button>
 <br>
