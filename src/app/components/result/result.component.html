@@ -3,10 +3,11 @@
     <mat-expansion-panel-header>
     {{ content.name | uppercase}} 
     </mat-expansion-panel-header>
-    <b>Tags:</b> {{ content.tags}} <br>
+    <b>Tags:</b><div *ngFor="let tag of content.tags">{{tag.tagName}}</div><br>
     <b>Description:</b> {{content.description}}<br>
     <b>Last Updated:</b> {{content.dateUpdated}}<br> 
-    <button mat-button> <b>Link:</b> <a href="{{ content.url}}">{{ content.url}}</a><br></button>
+    
+    <button mat-button> <b>Link:</b> <a href="{{ content.url}}" target="_blank" rel="noopener">{{ content.url}}</a><br></button>
   </mat-expansion-panel>
   </div>
  
