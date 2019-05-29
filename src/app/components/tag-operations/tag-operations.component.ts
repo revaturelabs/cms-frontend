@@ -22,6 +22,9 @@ export class TagOperationsComponent implements OnInit {
   contents: Content[];
   modules: string[];
   inputContent = new InputContentDTO(new Content(0, [], '', '', '', '', null, null),  [], new Module(0, '', true, null, null));
+  submitted: boolean;
+  message: string;
+  
 
   // public myreg = /(^|\s)((https?:\/\/)?[\w-]+(\.[\w-]+)+\.?(:\d+)?(\/\S*)?)/gi;
   public myreg = /^(http?|ftp):\/\/([a-zA-Z0-9.-]+(:[a-zA-Z0-9.&%$-]+)*@)*((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}|([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(:[0-9]+)*(\/($|[a-zA-Z0-9.,?'\\+&%$#=~_-]+))*$/;
@@ -30,7 +33,9 @@ export class TagOperationsComponent implements OnInit {
   constructor(
     private tagService: TagOperationsService,
     private router: Router
-  ) { }
+  ) { 
+    this.submitted = false;
+  }
 
   ngOnInit() {
     this.refreshTags();
@@ -68,7 +73,8 @@ export class TagOperationsComponent implements OnInit {
   submitCreate() {
     console.log(this.inputContent);
     this.tagService.createContent(this.inputContent).subscribe(data => console.log(data));
-    // this.submitToast();
+    this.submitted = true;
+    this.displayMessage();
   }
 
   // submitToast() {
@@ -85,6 +91,14 @@ export class TagOperationsComponent implements OnInit {
   markTouched() {
     this.url.markAsTouched();
     this.url.updateValueAndValidity();
+  }
+
+  displayMessage(){
+    if(this.submitted == true){
+      this.message = "Content Created Successfully";           
+    } else {
+      this.message = "";
+    }
   }
 
 }
